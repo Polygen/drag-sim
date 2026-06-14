@@ -29,7 +29,7 @@ export function simulate(config) {
   let split330ft = 0;
 
   // Temel araç özellikleri
-  const weight = config.weightKg;
+  const weight = config.weightKg + 80; // Sürücü ağırlığı eklendi
   const weightFrontPct = config.weightDistFrontPct;
   const drivetrain = config.drivetrain;
   const wheelbase = config.wheelbaseM;
@@ -67,7 +67,6 @@ export function simulate(config) {
   // İnce havada güç düşer. 1.225 kg/m3 standarttır.
   const powerLossFactor = airDensity / 1.225; 
 
-  const massEquivalent = weight * 1.05; // Dönen kütle ataleti (~%5)
   const shiftTimeSec = shiftTimeMs / 1000;
 
   // Initial step setup
@@ -106,12 +105,19 @@ export function simulate(config) {
         isShifting = false;
       }
     } else {
-      // 2. RPM Hesaplama
+      // 2. RPM Hesaplama ve Debriyaj / Tork Konvertörü Kayması
       const wheelRpm = (speed_ms * 60) / (2 * Math.PI * tireRadiusM);
       let calculatedRpm = wheelRpm * gearRatios[currentGearIndex] * finalDrive;
       
-      if (calculatedRpm < idleRpm && currentGearIndex === 0) {
-        engineRpm = Math.max(engineRpm, idleRpm);
+      // Debriyaj kavrama mantığı: Kalkışta tekerlek hızı düşükken debriyaj kaydırılır.
+      // Launch RPM'e kadar debriyaj kaydırılarak devir yüksek tutulur.
+      const targetLaunchRpm = config.launchRpm || (idleRpm + 2000);
+      
+      if (calculatedRpm < targetLaunchRpm && currentGearIndex === 0) {
+        // 1. viteste ve hız düşükken debriyaj kaydırılıyor
+        engineRpm = Math.max(calculatedRpm, targetLaunchRpm);
+      } else if (calculatedRpm < idleRpm) {
+        engineRpm = Math.max(calculatedRpm, idleRpm);
       } else {
         engineRpm = calculatedRpm;
       }
@@ -165,9 +171,8 @@ export function simulate(config) {
           slipEvents.push({ distance: distance_m, time: time_s, pct: slipPct });
         }
         
-        // Launch Control / Patinajda Devir Tutma
-        if (speed_ms < 10) engineRpm = Math.max(engineRpm, config.launchRpm || (idleRpm + 2000));
-        else engineRpm = Math.max(engineRpm, idleRpm);
+        // Patinaj anında devir yükselir (zaten wheelRpm veya debriyaj ile yüksek tutuluyor)
+        if (speed_ms < 10) engineRpm = Math.max(engineRpm, targetLaunchRpm);
       }
 
       // 6. Dirençler
@@ -176,7 +181,14 @@ export function simulate(config) {
 
       // 7. Net Kuvvet ve İvme
       const netForce = appliedForce - aeroDrag - rollingResistance;
-      acceleration_ms2 = netForce / massEquivalent;
+      
+      // Dönen kütle ataleti (Rotational inertia)
+      // Vites oranı arttıkça motorun dönen kütlesinin yarattığı eylemsizlik artar
+      const overallRatio = gearRatios[currentGearIndex] * finalDrive;
+      const inertiaFactor = 1.04 + 0.0015 * (overallRatio * overallRatio);
+      const dynamicMassEquivalent = weight * inertiaFactor;
+      
+      acceleration_ms2 = netForce / dynamicMassEquivalent;
     }
 
     // 8. Hız ve Mesafe Güncelleme
