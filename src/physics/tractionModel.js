@@ -30,7 +30,7 @@ export function calculateDrivenNormalForce(weightKg, weightDistFrontPct, drivetr
   
   if (drivetrain === 'RWD') {
     // RWD'de yük arkaya aktarılır
-    drivenLoadN = staticRearLoadN + weightTransferN + (aeroDownforceN / 2);
+    drivenLoadN = Math.min(weightKg * GRAVITY, staticRearLoadN + weightTransferN) + (aeroDownforceN / 2);
   } else if (drivetrain === 'FWD') {
     // FWD'de yük önden kalkar (çekiş düşer)
     drivenLoadN = staticFrontLoadN - weightTransferN + (aeroDownforceN / 2);
