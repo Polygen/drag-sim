@@ -1,0 +1,50 @@
+[
+  {
+    "id": "tire_drag_slick",
+    "name": "Drag Slick (Yarış Lastiği)",
+    "mu_prep_dry": 1.50,
+    "mu_unprep_dry": 1.25,
+    "mu_street_dry": 1.10,
+    "mu_street_wet": 0.35,
+    "optimal_temp_c_min": 80,
+    "optimal_temp_c_max": 110,
+    "cold_penalty_pct": 40,
+    "description": "Sadece drag pisti için, ıslak zeminde tehlikeli"
+  },
+  {
+    "id": "tire_semi_slick",
+    "name": "Semi-Slick (Yarı Yarış)",
+    "mu_prep_dry": 1.30,
+    "mu_unprep_dry": 1.18,
+    "mu_street_dry": 1.15,
+    "mu_street_wet": 0.60,
+    "optimal_temp_c_min": 60,
+    "optimal_temp_c_max": 100,
+    "cold_penalty_pct": 20,
+    "description": "Pist ve performanslı sokak kullanımı"
+  },
+  {
+    "id": "tire_high_perf_street",
+    "name": "Yüksek Performans Sokak (UHP)",
+    "mu_prep_dry": 1.10,
+    "mu_unprep_dry": 1.05,
+    "mu_street_dry": 1.05,
+    "mu_street_wet": 0.80,
+    "optimal_temp_c_min": 40,
+    "optimal_temp_c_max": 80,
+    "cold_penalty_pct": 5,
+    "description": "Günlük kullanım için en dengeli seçenek"
+  },
+  {
+    "id": "tire_standard_street",
+    "name": "Standart Sokak Lastiği (OEM)",
+    "mu_prep_dry": 0.90,
+    "mu_unprep_dry": 0.85,
+    "mu_street_dry": 0.85,
+    "mu_street_wet": 0.70,
+    "optimal_temp_c_min": 20,
+    "optimal_temp_c_max": 60,
+    "cold_penalty_pct": 0,
+    "description": "Fabrika çıkışı standart lastik"
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "id": "mod_exhaust_catback",
+    "name": "Egzoz Sistemi (Cat-back)",
+    "category": "motor",
+    "hp_multiplier": 1.03,
+    "weight_change_kg": -4,
+    "cost_est": 15000,
+    "description": "+%3 HP, -4kg ağırlık"
+  },
+  {
+    "id": "mod_header",
+    "name": "Performans Manifold (Header)",
+    "category": "motor",
+    "hp_multiplier": 1.05,
+    "weight_change_kg": -2,
+    "cost_est": 20000,
+    "description": "+%5 HP, -2kg ağırlık"
+  },
+  {
+    "id": "mod_cai",
+    "name": "Soğuk Hava Filtresi (CAI)",
+    "category": "motor",
+    "hp_multiplier": 1.02,
+    "weight_change_kg": 0,
+    "cost_est": 5000,
+    "description": "+%2 HP"
+  },
+  {
+    "id": "mod_lsd_1way",
+    "name": "Mekanik LSD (1-Way)",
+    "category": "sanziman",
+    "traction_factor_override": 0.91,
+    "weight_change_kg": 2,
+    "cost_est": 25000,
+    "description": "Maksimum ivmelenme tutunumu (Traction factor: 0.91)"
+  },
+  {
+    "id": "mod_short_ratio",
+    "name": "Kısa Vites Oranı (Short Ratio)",
+    "category": "sanziman",
+    "gear_ratio_multiplier": 1.10,
+    "weight_change_kg": 0,
+    "cost_est": 15000,
+    "description": "Vites oranlarını %10 kısaltır, daha hızlı ivme"
+  },
+  {
+    "id": "mod_sequential",
+    "name": "Sequantial Vites Dönüşümü",
+    "category": "sanziman",
+    "shift_time_override_ms": 150,
+    "weight_change_kg": 5,
+    "cost_est": 120000,
+    "description": "Vites süresini 150ms'ye düşürür"
+  },
+  {
+    "id": "mod_coilover",
+    "name": "Coilover Süspansiyon",
+    "category": "sasi",
+    "cog_height_change_mm": -30,
+    "weight_change_kg": -5,
+    "cost_est": 35000,
+    "description": "Ağırlık merkezini 30mm düşürür"
+  },
+  {
+    "id": "mod_strut_bar",
+    "name": "Strut Bar",
+    "category": "sasi",
+    "rigidity_score_change": 1,
+    "weight_change_kg": 3,
+    "cost_est": 4000,
+    "description": "Şasi rijitliğini 1 puan artırır"
+  },
+  {
+    "id": "mod_roll_cage",
+    "name": "Roll Cage (Yarım Kafes)",
+    "category": "sasi",
+    "rigidity_score_change": 2,
+    "weight_change_kg": 40,
+    "cog_height_change_mm": 5,
+    "cost_est": 40000,
+    "description": "Şasi rijitliğini 2 puan artırır, +40kg"
+  },
+  {
+    "id": "mod_weight_reduction_stage1",
+    "name": "Ağırlık Azaltma (İç döşeme sökümü)",
+    "category": "agirlik",
+    "weight_change_kg": -35,
+    "cost_est": 0,
+    "description": "-35kg ağırlık azaltma"
+  },
+  {
+    "id": "mod_weight_reduction_stage2",
+    "name": "Yarış Koltukları & Karbon Parçalar",
+    "category": "agirlik",
+    "weight_change_kg": -50,
+    "cost_est": 60000,
+    "description": "-50kg ağırlık azaltma"
+  }
+]

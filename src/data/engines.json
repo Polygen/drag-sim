@@ -1,0 +1,4278 @@
+[
+  {
+    "engine_code": "1.6 THP (EP6DTS)",
+    "origin_car": "Peugeot 207 RC",
+    "displacement_cc": 1598,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "175hp",
+    "stock_torque_nm_at_rpm": "240Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 115,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "transverse",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 27
+      },
+      {
+        "rpm": 2000,
+        "hp": 67
+      },
+      {
+        "rpm": 3000,
+        "hp": 101
+      },
+      {
+        "rpm": 4000,
+        "hp": 135
+      },
+      {
+        "rpm": 5000,
+        "hp": 160
+      },
+      {
+        "rpm": 6000,
+        "hp": 172
+      },
+      {
+        "rpm": 7000,
+        "hp": 165
+      },
+      {
+        "rpm": 8000,
+        "hp": 162
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 192
+      },
+      {
+        "rpm": 2000,
+        "nm": 240
+      },
+      {
+        "rpm": 3000,
+        "nm": 240
+      },
+      {
+        "rpm": 4000,
+        "nm": 240
+      },
+      {
+        "rpm": 5000,
+        "nm": 228
+      },
+      {
+        "rpm": 6000,
+        "nm": 204
+      },
+      {
+        "rpm": 7000,
+        "nm": 168
+      },
+      {
+        "rpm": 8000,
+        "nm": 144
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "1.6 THP (EP6CDTX)",
+    "origin_car": "Peugeot RCZ",
+    "displacement_cc": 1598,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "200hp",
+    "stock_torque_nm_at_rpm": "275Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 115,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "transverse",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 31
+      },
+      {
+        "rpm": 2000,
+        "hp": 77
+      },
+      {
+        "rpm": 3000,
+        "hp": 116
+      },
+      {
+        "rpm": 4000,
+        "hp": 154
+      },
+      {
+        "rpm": 5000,
+        "hp": 183
+      },
+      {
+        "rpm": 6000,
+        "hp": 197
+      },
+      {
+        "rpm": 7000,
+        "hp": 190
+      },
+      {
+        "rpm": 8000,
+        "hp": 185
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 220
+      },
+      {
+        "rpm": 2000,
+        "nm": 275
+      },
+      {
+        "rpm": 3000,
+        "nm": 275
+      },
+      {
+        "rpm": 4000,
+        "nm": 275
+      },
+      {
+        "rpm": 5000,
+        "nm": 261
+      },
+      {
+        "rpm": 6000,
+        "nm": 234
+      },
+      {
+        "rpm": 7000,
+        "nm": 193
+      },
+      {
+        "rpm": 8000,
+        "nm": 165
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "EW10J4",
+    "origin_car": "Peugeot 206 GTi",
+    "displacement_cc": 1997,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "136hp",
+    "stock_torque_nm_at_rpm": "190Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 135,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "transverse",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 21
+      },
+      {
+        "rpm": 2000,
+        "hp": 53
+      },
+      {
+        "rpm": 3000,
+        "hp": 80
+      },
+      {
+        "rpm": 4000,
+        "hp": 107
+      },
+      {
+        "rpm": 5000,
+        "hp": 127
+      },
+      {
+        "rpm": 6000,
+        "hp": 136
+      },
+      {
+        "rpm": 7000,
+        "hp": 131
+      },
+      {
+        "rpm": 8000,
+        "hp": 128
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 152
+      },
+      {
+        "rpm": 2000,
+        "nm": 190
+      },
+      {
+        "rpm": 3000,
+        "nm": 190
+      },
+      {
+        "rpm": 4000,
+        "nm": 190
+      },
+      {
+        "rpm": 5000,
+        "nm": 181
+      },
+      {
+        "rpm": 6000,
+        "nm": 162
+      },
+      {
+        "rpm": 7000,
+        "nm": 133
+      },
+      {
+        "rpm": 8000,
+        "nm": 114
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "1.6 THP (EP6FDTR)",
+    "origin_car": "Peugeot 308 GTi",
+    "displacement_cc": 1598,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "270hp",
+    "stock_torque_nm_at_rpm": "330Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 115,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "transverse",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 37
+      },
+      {
+        "rpm": 2000,
+        "hp": 93
+      },
+      {
+        "rpm": 3000,
+        "hp": 139
+      },
+      {
+        "rpm": 4000,
+        "hp": 185
+      },
+      {
+        "rpm": 5000,
+        "hp": 220
+      },
+      {
+        "rpm": 6000,
+        "hp": 237
+      },
+      {
+        "rpm": 7000,
+        "hp": 227
+      },
+      {
+        "rpm": 8000,
+        "hp": 222
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 264
+      },
+      {
+        "rpm": 2000,
+        "nm": 330
+      },
+      {
+        "rpm": 3000,
+        "nm": 330
+      },
+      {
+        "rpm": 4000,
+        "nm": 330
+      },
+      {
+        "rpm": 5000,
+        "nm": 314
+      },
+      {
+        "rpm": 6000,
+        "nm": 281
+      },
+      {
+        "rpm": 7000,
+        "nm": 231
+      },
+      {
+        "rpm": 8000,
+        "nm": 198
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "S14B23",
+    "origin_car": "BMW M3 E30",
+    "displacement_cc": 2302,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "200hp",
+    "stock_torque_nm_at_rpm": "240Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 150,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 27
+      },
+      {
+        "rpm": 2000,
+        "hp": 67
+      },
+      {
+        "rpm": 3000,
+        "hp": 101
+      },
+      {
+        "rpm": 4000,
+        "hp": 135
+      },
+      {
+        "rpm": 5000,
+        "hp": 160
+      },
+      {
+        "rpm": 6000,
+        "hp": 172
+      },
+      {
+        "rpm": 7000,
+        "hp": 165
+      },
+      {
+        "rpm": 8000,
+        "hp": 162
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 192
+      },
+      {
+        "rpm": 2000,
+        "nm": 240
+      },
+      {
+        "rpm": 3000,
+        "nm": 240
+      },
+      {
+        "rpm": 4000,
+        "nm": 240
+      },
+      {
+        "rpm": 5000,
+        "nm": 228
+      },
+      {
+        "rpm": 6000,
+        "nm": 204
+      },
+      {
+        "rpm": 7000,
+        "nm": 168
+      },
+      {
+        "rpm": 8000,
+        "nm": 144
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "M20B25",
+    "origin_car": "BMW 325i E30",
+    "displacement_cc": 2494,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "170hp",
+    "stock_torque_nm_at_rpm": "222Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 175,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 25
+      },
+      {
+        "rpm": 2000,
+        "hp": 62
+      },
+      {
+        "rpm": 3000,
+        "hp": 94
+      },
+      {
+        "rpm": 4000,
+        "hp": 125
+      },
+      {
+        "rpm": 5000,
+        "hp": 148
+      },
+      {
+        "rpm": 6000,
+        "hp": 159
+      },
+      {
+        "rpm": 7000,
+        "hp": 152
+      },
+      {
+        "rpm": 8000,
+        "hp": 149
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 178
+      },
+      {
+        "rpm": 2000,
+        "nm": 222
+      },
+      {
+        "rpm": 3000,
+        "nm": 222
+      },
+      {
+        "rpm": 4000,
+        "nm": 222
+      },
+      {
+        "rpm": 5000,
+        "nm": 211
+      },
+      {
+        "rpm": 6000,
+        "nm": 189
+      },
+      {
+        "rpm": 7000,
+        "nm": 155
+      },
+      {
+        "rpm": 8000,
+        "nm": 133
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "M52B28",
+    "origin_car": "BMW 328i E36",
+    "displacement_cc": 2793,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "193hp",
+    "stock_torque_nm_at_rpm": "280Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 165,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 31
+      },
+      {
+        "rpm": 2000,
+        "hp": 79
+      },
+      {
+        "rpm": 3000,
+        "hp": 118
+      },
+      {
+        "rpm": 4000,
+        "hp": 157
+      },
+      {
+        "rpm": 5000,
+        "hp": 187
+      },
+      {
+        "rpm": 6000,
+        "hp": 201
+      },
+      {
+        "rpm": 7000,
+        "hp": 193
+      },
+      {
+        "rpm": 8000,
+        "hp": 189
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 224
+      },
+      {
+        "rpm": 2000,
+        "nm": 280
+      },
+      {
+        "rpm": 3000,
+        "nm": 280
+      },
+      {
+        "rpm": 4000,
+        "nm": 280
+      },
+      {
+        "rpm": 5000,
+        "nm": 266
+      },
+      {
+        "rpm": 6000,
+        "nm": 238
+      },
+      {
+        "rpm": 7000,
+        "nm": 196
+      },
+      {
+        "rpm": 8000,
+        "nm": 168
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "S50B30",
+    "origin_car": "BMW M3 E36",
+    "displacement_cc": 2990,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "286hp",
+    "stock_torque_nm_at_rpm": "320Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 180,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 36
+      },
+      {
+        "rpm": 2000,
+        "hp": 90
+      },
+      {
+        "rpm": 3000,
+        "hp": 135
+      },
+      {
+        "rpm": 4000,
+        "hp": 180
+      },
+      {
+        "rpm": 5000,
+        "hp": 213
+      },
+      {
+        "rpm": 6000,
+        "hp": 229
+      },
+      {
+        "rpm": 7000,
+        "hp": 220
+      },
+      {
+        "rpm": 8000,
+        "hp": 216
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 256
+      },
+      {
+        "rpm": 2000,
+        "nm": 320
+      },
+      {
+        "rpm": 3000,
+        "nm": 320
+      },
+      {
+        "rpm": 4000,
+        "nm": 320
+      },
+      {
+        "rpm": 5000,
+        "nm": 304
+      },
+      {
+        "rpm": 6000,
+        "nm": 272
+      },
+      {
+        "rpm": 7000,
+        "nm": 224
+      },
+      {
+        "rpm": 8000,
+        "nm": 192
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "S54B32",
+    "origin_car": "BMW M3 E46",
+    "displacement_cc": 3246,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "343hp",
+    "stock_torque_nm_at_rpm": "365Nm",
+    "redline_rpm": 8200,
+    "idle_rpm": 800,
+    "engine_weight_kg": 212,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 41
+      },
+      {
+        "rpm": 2000,
+        "hp": 103
+      },
+      {
+        "rpm": 3000,
+        "hp": 154
+      },
+      {
+        "rpm": 4000,
+        "hp": 205
+      },
+      {
+        "rpm": 5000,
+        "hp": 244
+      },
+      {
+        "rpm": 6000,
+        "hp": 261
+      },
+      {
+        "rpm": 7000,
+        "hp": 251
+      },
+      {
+        "rpm": 8000,
+        "hp": 246
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 292
+      },
+      {
+        "rpm": 2000,
+        "nm": 365
+      },
+      {
+        "rpm": 3000,
+        "nm": 365
+      },
+      {
+        "rpm": 4000,
+        "nm": 365
+      },
+      {
+        "rpm": 5000,
+        "nm": 347
+      },
+      {
+        "rpm": 6000,
+        "nm": 310
+      },
+      {
+        "rpm": 7000,
+        "nm": 255
+      },
+      {
+        "rpm": 8000,
+        "nm": 219
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "S65B40",
+    "origin_car": "BMW M3 E92",
+    "displacement_cc": 3999,
+    "cylinder_count": 8,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "420hp",
+    "stock_torque_nm_at_rpm": "400Nm",
+    "redline_rpm": 8200,
+    "idle_rpm": 800,
+    "engine_weight_kg": 202,
+    "engine_width_mm": 600,
+    "engine_length_mm": 700,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 45
+      },
+      {
+        "rpm": 2000,
+        "hp": 112
+      },
+      {
+        "rpm": 3000,
+        "hp": 169
+      },
+      {
+        "rpm": 4000,
+        "hp": 225
+      },
+      {
+        "rpm": 5000,
+        "hp": 267
+      },
+      {
+        "rpm": 6000,
+        "hp": 286
+      },
+      {
+        "rpm": 7000,
+        "hp": 275
+      },
+      {
+        "rpm": 8000,
+        "hp": 270
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 320
+      },
+      {
+        "rpm": 2000,
+        "nm": 400
+      },
+      {
+        "rpm": 3000,
+        "nm": 400
+      },
+      {
+        "rpm": 4000,
+        "nm": 400
+      },
+      {
+        "rpm": 5000,
+        "nm": 380
+      },
+      {
+        "rpm": 6000,
+        "nm": 340
+      },
+      {
+        "rpm": 7000,
+        "nm": 280
+      },
+      {
+        "rpm": 8000,
+        "nm": 240
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "N55B30",
+    "origin_car": "BMW 335i F30",
+    "displacement_cc": 2979,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "306hp",
+    "stock_torque_nm_at_rpm": "400Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 190,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 45
+      },
+      {
+        "rpm": 2000,
+        "hp": 112
+      },
+      {
+        "rpm": 3000,
+        "hp": 169
+      },
+      {
+        "rpm": 4000,
+        "hp": 225
+      },
+      {
+        "rpm": 5000,
+        "hp": 267
+      },
+      {
+        "rpm": 6000,
+        "hp": 286
+      },
+      {
+        "rpm": 7000,
+        "hp": 275
+      },
+      {
+        "rpm": 8000,
+        "hp": 270
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 320
+      },
+      {
+        "rpm": 2000,
+        "nm": 400
+      },
+      {
+        "rpm": 3000,
+        "nm": 400
+      },
+      {
+        "rpm": 4000,
+        "nm": 400
+      },
+      {
+        "rpm": 5000,
+        "nm": 380
+      },
+      {
+        "rpm": 6000,
+        "nm": 340
+      },
+      {
+        "rpm": 7000,
+        "nm": 280
+      },
+      {
+        "rpm": 8000,
+        "nm": 240
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "S38B36",
+    "origin_car": "BMW M5 E34",
+    "displacement_cc": 3535,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "315hp",
+    "stock_torque_nm_at_rpm": "360Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 235,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 40
+      },
+      {
+        "rpm": 2000,
+        "hp": 101
+      },
+      {
+        "rpm": 3000,
+        "hp": 152
+      },
+      {
+        "rpm": 4000,
+        "hp": 202
+      },
+      {
+        "rpm": 5000,
+        "hp": 240
+      },
+      {
+        "rpm": 6000,
+        "hp": 258
+      },
+      {
+        "rpm": 7000,
+        "hp": 248
+      },
+      {
+        "rpm": 8000,
+        "hp": 243
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 288
+      },
+      {
+        "rpm": 2000,
+        "nm": 360
+      },
+      {
+        "rpm": 3000,
+        "nm": 360
+      },
+      {
+        "rpm": 4000,
+        "nm": 360
+      },
+      {
+        "rpm": 5000,
+        "nm": 342
+      },
+      {
+        "rpm": 6000,
+        "nm": 306
+      },
+      {
+        "rpm": 7000,
+        "nm": 252
+      },
+      {
+        "rpm": 8000,
+        "nm": 216
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "S62B50",
+    "origin_car": "BMW M5 E39",
+    "displacement_cc": 4941,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "400hp",
+    "stock_torque_nm_at_rpm": "500Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 240,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 49
+      },
+      {
+        "rpm": 2000,
+        "hp": 119
+      },
+      {
+        "rpm": 3000,
+        "hp": 200
+      },
+      {
+        "rpm": 4000,
+        "hp": 281
+      },
+      {
+        "rpm": 5000,
+        "hp": 334
+      },
+      {
+        "rpm": 6000,
+        "hp": 358
+      },
+      {
+        "rpm": 7000,
+        "hp": 369
+      },
+      {
+        "rpm": 8000,
+        "hp": 365
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 350
+      },
+      {
+        "rpm": 2000,
+        "nm": 425
+      },
+      {
+        "rpm": 3000,
+        "nm": 475
+      },
+      {
+        "rpm": 4000,
+        "nm": 500
+      },
+      {
+        "rpm": 5000,
+        "nm": 475
+      },
+      {
+        "rpm": 6000,
+        "nm": 425
+      },
+      {
+        "rpm": 7000,
+        "nm": 375
+      },
+      {
+        "rpm": 8000,
+        "nm": 325
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "S85B50",
+    "origin_car": "BMW M5 E60",
+    "displacement_cc": 4999,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "507hp",
+    "stock_torque_nm_at_rpm": "520Nm",
+    "redline_rpm": 8200,
+    "idle_rpm": 800,
+    "engine_weight_kg": 240,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 58
+      },
+      {
+        "rpm": 2000,
+        "hp": 146
+      },
+      {
+        "rpm": 3000,
+        "hp": 219
+      },
+      {
+        "rpm": 4000,
+        "hp": 292
+      },
+      {
+        "rpm": 5000,
+        "hp": 347
+      },
+      {
+        "rpm": 6000,
+        "hp": 372
+      },
+      {
+        "rpm": 7000,
+        "hp": 358
+      },
+      {
+        "rpm": 8000,
+        "hp": 351
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 416
+      },
+      {
+        "rpm": 2000,
+        "nm": 520
+      },
+      {
+        "rpm": 3000,
+        "nm": 520
+      },
+      {
+        "rpm": 4000,
+        "nm": 520
+      },
+      {
+        "rpm": 5000,
+        "nm": 494
+      },
+      {
+        "rpm": 6000,
+        "nm": 442
+      },
+      {
+        "rpm": 7000,
+        "nm": 364
+      },
+      {
+        "rpm": 8000,
+        "nm": 312
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "Skyactiv-G 2.0",
+    "origin_car": "Mazda MX-5 ND",
+    "displacement_cc": 1998,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "184hp",
+    "stock_torque_nm_at_rpm": "205Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 115,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 23
+      },
+      {
+        "rpm": 2000,
+        "hp": 58
+      },
+      {
+        "rpm": 3000,
+        "hp": 86
+      },
+      {
+        "rpm": 4000,
+        "hp": 115
+      },
+      {
+        "rpm": 5000,
+        "hp": 137
+      },
+      {
+        "rpm": 6000,
+        "hp": 147
+      },
+      {
+        "rpm": 7000,
+        "hp": 142
+      },
+      {
+        "rpm": 8000,
+        "hp": 138
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 164
+      },
+      {
+        "rpm": 2000,
+        "nm": 205
+      },
+      {
+        "rpm": 3000,
+        "nm": 205
+      },
+      {
+        "rpm": 4000,
+        "nm": 205
+      },
+      {
+        "rpm": 5000,
+        "nm": 195
+      },
+      {
+        "rpm": 6000,
+        "nm": 174
+      },
+      {
+        "rpm": 7000,
+        "nm": 144
+      },
+      {
+        "rpm": 8000,
+        "nm": 123
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "13B-REW",
+    "origin_car": "Mazda RX-7 FD",
+    "displacement_cc": 1308,
+    "cylinder_count": 2,
+    "configuration": "rotary",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "255hp",
+    "stock_torque_nm_at_rpm": "294Nm",
+    "redline_rpm": 9000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 112,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 33
+      },
+      {
+        "rpm": 2000,
+        "hp": 83
+      },
+      {
+        "rpm": 3000,
+        "hp": 124
+      },
+      {
+        "rpm": 4000,
+        "hp": 165
+      },
+      {
+        "rpm": 5000,
+        "hp": 196
+      },
+      {
+        "rpm": 6000,
+        "hp": 211
+      },
+      {
+        "rpm": 7000,
+        "hp": 203
+      },
+      {
+        "rpm": 8000,
+        "hp": 198
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 235
+      },
+      {
+        "rpm": 2000,
+        "nm": 294
+      },
+      {
+        "rpm": 3000,
+        "nm": 294
+      },
+      {
+        "rpm": 4000,
+        "nm": 294
+      },
+      {
+        "rpm": 5000,
+        "nm": 279
+      },
+      {
+        "rpm": 6000,
+        "nm": 250
+      },
+      {
+        "rpm": 7000,
+        "nm": 206
+      },
+      {
+        "rpm": 8000,
+        "nm": 176
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "13B-MSP",
+    "origin_car": "Mazda RX-8",
+    "displacement_cc": 1308,
+    "cylinder_count": 2,
+    "configuration": "rotary",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "231hp",
+    "stock_torque_nm_at_rpm": "211Nm",
+    "redline_rpm": 9000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 112,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 24
+      },
+      {
+        "rpm": 2000,
+        "hp": 59
+      },
+      {
+        "rpm": 3000,
+        "hp": 89
+      },
+      {
+        "rpm": 4000,
+        "hp": 119
+      },
+      {
+        "rpm": 5000,
+        "hp": 140
+      },
+      {
+        "rpm": 6000,
+        "hp": 151
+      },
+      {
+        "rpm": 7000,
+        "hp": 145
+      },
+      {
+        "rpm": 8000,
+        "hp": 143
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 169
+      },
+      {
+        "rpm": 2000,
+        "nm": 211
+      },
+      {
+        "rpm": 3000,
+        "nm": 211
+      },
+      {
+        "rpm": 4000,
+        "nm": 211
+      },
+      {
+        "rpm": 5000,
+        "nm": 200
+      },
+      {
+        "rpm": 6000,
+        "nm": 179
+      },
+      {
+        "rpm": 7000,
+        "nm": 148
+      },
+      {
+        "rpm": 8000,
+        "nm": 127
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "MZR 2.3 DISI",
+    "origin_car": "Mazda 3 MPS",
+    "displacement_cc": 2261,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "260hp",
+    "stock_torque_nm_at_rpm": "380Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 155,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "transverse",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 43
+      },
+      {
+        "rpm": 2000,
+        "hp": 107
+      },
+      {
+        "rpm": 3000,
+        "hp": 160
+      },
+      {
+        "rpm": 4000,
+        "hp": 213
+      },
+      {
+        "rpm": 5000,
+        "hp": 253
+      },
+      {
+        "rpm": 6000,
+        "hp": 272
+      },
+      {
+        "rpm": 7000,
+        "hp": 261
+      },
+      {
+        "rpm": 8000,
+        "hp": 256
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 304
+      },
+      {
+        "rpm": 2000,
+        "nm": 380
+      },
+      {
+        "rpm": 3000,
+        "nm": 380
+      },
+      {
+        "rpm": 4000,
+        "nm": 380
+      },
+      {
+        "rpm": 5000,
+        "nm": 361
+      },
+      {
+        "rpm": 6000,
+        "nm": 323
+      },
+      {
+        "rpm": 7000,
+        "nm": 266
+      },
+      {
+        "rpm": 8000,
+        "nm": 228
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "1.8T 20V",
+    "origin_car": "VW Golf Mk4 GTI",
+    "displacement_cc": 1781,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "150hp",
+    "stock_torque_nm_at_rpm": "210Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 145,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "transverse",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 24
+      },
+      {
+        "rpm": 2000,
+        "hp": 59
+      },
+      {
+        "rpm": 3000,
+        "hp": 88
+      },
+      {
+        "rpm": 4000,
+        "hp": 118
+      },
+      {
+        "rpm": 5000,
+        "hp": 140
+      },
+      {
+        "rpm": 6000,
+        "hp": 151
+      },
+      {
+        "rpm": 7000,
+        "hp": 145
+      },
+      {
+        "rpm": 8000,
+        "hp": 142
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 168
+      },
+      {
+        "rpm": 2000,
+        "nm": 210
+      },
+      {
+        "rpm": 3000,
+        "nm": 210
+      },
+      {
+        "rpm": 4000,
+        "nm": 210
+      },
+      {
+        "rpm": 5000,
+        "nm": 200
+      },
+      {
+        "rpm": 6000,
+        "nm": 179
+      },
+      {
+        "rpm": 7000,
+        "nm": 147
+      },
+      {
+        "rpm": 8000,
+        "nm": 126
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "EA113 2.0 TFSI",
+    "origin_car": "VW Golf Mk5 GTI",
+    "displacement_cc": 1984,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "200hp",
+    "stock_torque_nm_at_rpm": "280Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 152,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "transverse",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 31
+      },
+      {
+        "rpm": 2000,
+        "hp": 79
+      },
+      {
+        "rpm": 3000,
+        "hp": 118
+      },
+      {
+        "rpm": 4000,
+        "hp": 157
+      },
+      {
+        "rpm": 5000,
+        "hp": 187
+      },
+      {
+        "rpm": 6000,
+        "hp": 201
+      },
+      {
+        "rpm": 7000,
+        "hp": 193
+      },
+      {
+        "rpm": 8000,
+        "hp": 189
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 224
+      },
+      {
+        "rpm": 2000,
+        "nm": 280
+      },
+      {
+        "rpm": 3000,
+        "nm": 280
+      },
+      {
+        "rpm": 4000,
+        "nm": 280
+      },
+      {
+        "rpm": 5000,
+        "nm": 266
+      },
+      {
+        "rpm": 6000,
+        "nm": 238
+      },
+      {
+        "rpm": 7000,
+        "nm": 196
+      },
+      {
+        "rpm": 8000,
+        "nm": 168
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "EA888 Gen2",
+    "origin_car": "VW Golf Mk6 GTI",
+    "displacement_cc": 1984,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "210hp",
+    "stock_torque_nm_at_rpm": "280Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 135,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "transverse",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 31
+      },
+      {
+        "rpm": 2000,
+        "hp": 79
+      },
+      {
+        "rpm": 3000,
+        "hp": 118
+      },
+      {
+        "rpm": 4000,
+        "hp": 157
+      },
+      {
+        "rpm": 5000,
+        "hp": 187
+      },
+      {
+        "rpm": 6000,
+        "hp": 201
+      },
+      {
+        "rpm": 7000,
+        "hp": 193
+      },
+      {
+        "rpm": 8000,
+        "hp": 189
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 224
+      },
+      {
+        "rpm": 2000,
+        "nm": 280
+      },
+      {
+        "rpm": 3000,
+        "nm": 280
+      },
+      {
+        "rpm": 4000,
+        "nm": 280
+      },
+      {
+        "rpm": 5000,
+        "nm": 266
+      },
+      {
+        "rpm": 6000,
+        "nm": 238
+      },
+      {
+        "rpm": 7000,
+        "nm": 196
+      },
+      {
+        "rpm": 8000,
+        "nm": 168
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "EA888 Gen3",
+    "origin_car": "VW Golf Mk7 GTI",
+    "displacement_cc": 1984,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "220hp",
+    "stock_torque_nm_at_rpm": "350Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 135,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "transverse",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 39
+      },
+      {
+        "rpm": 2000,
+        "hp": 98
+      },
+      {
+        "rpm": 3000,
+        "hp": 147
+      },
+      {
+        "rpm": 4000,
+        "hp": 197
+      },
+      {
+        "rpm": 5000,
+        "hp": 234
+      },
+      {
+        "rpm": 6000,
+        "hp": 251
+      },
+      {
+        "rpm": 7000,
+        "hp": 241
+      },
+      {
+        "rpm": 8000,
+        "hp": 236
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 280
+      },
+      {
+        "rpm": 2000,
+        "nm": 350
+      },
+      {
+        "rpm": 3000,
+        "nm": 350
+      },
+      {
+        "rpm": 4000,
+        "nm": 350
+      },
+      {
+        "rpm": 5000,
+        "nm": 333
+      },
+      {
+        "rpm": 6000,
+        "nm": 298
+      },
+      {
+        "rpm": 7000,
+        "nm": 245
+      },
+      {
+        "rpm": 8000,
+        "nm": 210
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "EA888 Gen3 R",
+    "origin_car": "VW Golf Mk7 R",
+    "displacement_cc": 1984,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "300hp",
+    "stock_torque_nm_at_rpm": "380Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 135,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 43
+      },
+      {
+        "rpm": 2000,
+        "hp": 107
+      },
+      {
+        "rpm": 3000,
+        "hp": 160
+      },
+      {
+        "rpm": 4000,
+        "hp": 213
+      },
+      {
+        "rpm": 5000,
+        "hp": 253
+      },
+      {
+        "rpm": 6000,
+        "hp": 272
+      },
+      {
+        "rpm": 7000,
+        "hp": 261
+      },
+      {
+        "rpm": 8000,
+        "hp": 256
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 304
+      },
+      {
+        "rpm": 2000,
+        "nm": 380
+      },
+      {
+        "rpm": 3000,
+        "nm": 380
+      },
+      {
+        "rpm": 4000,
+        "nm": 380
+      },
+      {
+        "rpm": 5000,
+        "nm": 361
+      },
+      {
+        "rpm": 6000,
+        "nm": 323
+      },
+      {
+        "rpm": 7000,
+        "nm": 266
+      },
+      {
+        "rpm": 8000,
+        "nm": 228
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "3.2 VR6",
+    "origin_car": "VW Golf Mk4 R32",
+    "displacement_cc": 3189,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "241hp",
+    "stock_torque_nm_at_rpm": "320Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 185,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 36
+      },
+      {
+        "rpm": 2000,
+        "hp": 90
+      },
+      {
+        "rpm": 3000,
+        "hp": 135
+      },
+      {
+        "rpm": 4000,
+        "hp": 180
+      },
+      {
+        "rpm": 5000,
+        "hp": 213
+      },
+      {
+        "rpm": 6000,
+        "hp": 229
+      },
+      {
+        "rpm": 7000,
+        "hp": 220
+      },
+      {
+        "rpm": 8000,
+        "hp": 216
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 256
+      },
+      {
+        "rpm": 2000,
+        "nm": 320
+      },
+      {
+        "rpm": 3000,
+        "nm": 320
+      },
+      {
+        "rpm": 4000,
+        "nm": 320
+      },
+      {
+        "rpm": 5000,
+        "nm": 304
+      },
+      {
+        "rpm": 6000,
+        "nm": 272
+      },
+      {
+        "rpm": 7000,
+        "nm": 224
+      },
+      {
+        "rpm": 8000,
+        "nm": 192
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "4G63T",
+    "origin_car": "Mitsubishi Lancer Evo VI",
+    "displacement_cc": 1997,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "280hp",
+    "stock_torque_nm_at_rpm": "373Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 160,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 42
+      },
+      {
+        "rpm": 2000,
+        "hp": 105
+      },
+      {
+        "rpm": 3000,
+        "hp": 157
+      },
+      {
+        "rpm": 4000,
+        "hp": 210
+      },
+      {
+        "rpm": 5000,
+        "hp": 249
+      },
+      {
+        "rpm": 6000,
+        "hp": 267
+      },
+      {
+        "rpm": 7000,
+        "hp": 257
+      },
+      {
+        "rpm": 8000,
+        "hp": 252
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 298
+      },
+      {
+        "rpm": 2000,
+        "nm": 373
+      },
+      {
+        "rpm": 3000,
+        "nm": 373
+      },
+      {
+        "rpm": 4000,
+        "nm": 373
+      },
+      {
+        "rpm": 5000,
+        "nm": 354
+      },
+      {
+        "rpm": 6000,
+        "nm": 317
+      },
+      {
+        "rpm": 7000,
+        "nm": 261
+      },
+      {
+        "rpm": 8000,
+        "nm": 224
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "4G63T MIVEC",
+    "origin_car": "Mitsubishi Lancer Evo IX",
+    "displacement_cc": 1997,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "286hp",
+    "stock_torque_nm_at_rpm": "392Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 165,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 44
+      },
+      {
+        "rpm": 2000,
+        "hp": 110
+      },
+      {
+        "rpm": 3000,
+        "hp": 165
+      },
+      {
+        "rpm": 4000,
+        "hp": 220
+      },
+      {
+        "rpm": 5000,
+        "hp": 261
+      },
+      {
+        "rpm": 6000,
+        "hp": 281
+      },
+      {
+        "rpm": 7000,
+        "hp": 269
+      },
+      {
+        "rpm": 8000,
+        "hp": 264
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 314
+      },
+      {
+        "rpm": 2000,
+        "nm": 392
+      },
+      {
+        "rpm": 3000,
+        "nm": 392
+      },
+      {
+        "rpm": 4000,
+        "nm": 392
+      },
+      {
+        "rpm": 5000,
+        "nm": 372
+      },
+      {
+        "rpm": 6000,
+        "nm": 333
+      },
+      {
+        "rpm": 7000,
+        "nm": 274
+      },
+      {
+        "rpm": 8000,
+        "nm": 235
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "4B11T",
+    "origin_car": "Mitsubishi Lancer Evo X",
+    "displacement_cc": 1998,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "295hp",
+    "stock_torque_nm_at_rpm": "366Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 150,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 41
+      },
+      {
+        "rpm": 2000,
+        "hp": 103
+      },
+      {
+        "rpm": 3000,
+        "hp": 154
+      },
+      {
+        "rpm": 4000,
+        "hp": 206
+      },
+      {
+        "rpm": 5000,
+        "hp": 244
+      },
+      {
+        "rpm": 6000,
+        "hp": 262
+      },
+      {
+        "rpm": 7000,
+        "hp": 252
+      },
+      {
+        "rpm": 8000,
+        "hp": 247
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 293
+      },
+      {
+        "rpm": 2000,
+        "nm": 366
+      },
+      {
+        "rpm": 3000,
+        "nm": 366
+      },
+      {
+        "rpm": 4000,
+        "nm": 366
+      },
+      {
+        "rpm": 5000,
+        "nm": 348
+      },
+      {
+        "rpm": 6000,
+        "nm": 311
+      },
+      {
+        "rpm": 7000,
+        "nm": 256
+      },
+      {
+        "rpm": 8000,
+        "nm": 220
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "VR38DETT",
+    "origin_car": "Nissan GT-R R35",
+    "displacement_cc": 3799,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "480hp",
+    "stock_torque_nm_at_rpm": "588Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 276,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 66
+      },
+      {
+        "rpm": 2000,
+        "hp": 165
+      },
+      {
+        "rpm": 3000,
+        "hp": 248
+      },
+      {
+        "rpm": 4000,
+        "hp": 330
+      },
+      {
+        "rpm": 5000,
+        "hp": 393
+      },
+      {
+        "rpm": 6000,
+        "hp": 421
+      },
+      {
+        "rpm": 7000,
+        "hp": 405
+      },
+      {
+        "rpm": 8000,
+        "hp": 397
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 470
+      },
+      {
+        "rpm": 2000,
+        "nm": 588
+      },
+      {
+        "rpm": 3000,
+        "nm": 588
+      },
+      {
+        "rpm": 4000,
+        "nm": 588
+      },
+      {
+        "rpm": 5000,
+        "nm": 559
+      },
+      {
+        "rpm": 6000,
+        "nm": 500
+      },
+      {
+        "rpm": 7000,
+        "nm": 412
+      },
+      {
+        "rpm": 8000,
+        "nm": 353
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "RB26DETT",
+    "origin_car": "Nissan Skyline GT-R R34",
+    "displacement_cc": 2568,
+    "cylinder_count": 6,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "280hp",
+    "stock_torque_nm_at_rpm": "392Nm",
+    "redline_rpm": 7500,
+    "idle_rpm": 800,
+    "engine_weight_kg": 250,
+    "engine_width_mm": 600,
+    "engine_length_mm": 800,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 44
+      },
+      {
+        "rpm": 2000,
+        "hp": 110
+      },
+      {
+        "rpm": 3000,
+        "hp": 165
+      },
+      {
+        "rpm": 4000,
+        "hp": 220
+      },
+      {
+        "rpm": 5000,
+        "hp": 261
+      },
+      {
+        "rpm": 6000,
+        "hp": 281
+      },
+      {
+        "rpm": 7000,
+        "hp": 269
+      },
+      {
+        "rpm": 8000,
+        "hp": 264
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 314
+      },
+      {
+        "rpm": 2000,
+        "nm": 392
+      },
+      {
+        "rpm": 3000,
+        "nm": 392
+      },
+      {
+        "rpm": 4000,
+        "nm": 392
+      },
+      {
+        "rpm": 5000,
+        "nm": 372
+      },
+      {
+        "rpm": 6000,
+        "nm": 333
+      },
+      {
+        "rpm": 7000,
+        "nm": 274
+      },
+      {
+        "rpm": 8000,
+        "nm": 235
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "VQ35DE",
+    "origin_car": "Nissan 350Z",
+    "displacement_cc": 3498,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "280hp",
+    "stock_torque_nm_at_rpm": "363Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 180,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 41
+      },
+      {
+        "rpm": 2000,
+        "hp": 102
+      },
+      {
+        "rpm": 3000,
+        "hp": 153
+      },
+      {
+        "rpm": 4000,
+        "hp": 204
+      },
+      {
+        "rpm": 5000,
+        "hp": 242
+      },
+      {
+        "rpm": 6000,
+        "hp": 260
+      },
+      {
+        "rpm": 7000,
+        "hp": 250
+      },
+      {
+        "rpm": 8000,
+        "hp": 245
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 290
+      },
+      {
+        "rpm": 2000,
+        "nm": 363
+      },
+      {
+        "rpm": 3000,
+        "nm": 363
+      },
+      {
+        "rpm": 4000,
+        "nm": 363
+      },
+      {
+        "rpm": 5000,
+        "nm": 345
+      },
+      {
+        "rpm": 6000,
+        "nm": 309
+      },
+      {
+        "rpm": 7000,
+        "nm": 254
+      },
+      {
+        "rpm": 8000,
+        "nm": 218
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "SR20DET",
+    "origin_car": "Nissan Silvia S15",
+    "displacement_cc": 1998,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "250hp",
+    "stock_torque_nm_at_rpm": "275Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 149,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 31
+      },
+      {
+        "rpm": 2000,
+        "hp": 77
+      },
+      {
+        "rpm": 3000,
+        "hp": 116
+      },
+      {
+        "rpm": 4000,
+        "hp": 154
+      },
+      {
+        "rpm": 5000,
+        "hp": 183
+      },
+      {
+        "rpm": 6000,
+        "hp": 197
+      },
+      {
+        "rpm": 7000,
+        "hp": 190
+      },
+      {
+        "rpm": 8000,
+        "hp": 185
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 220
+      },
+      {
+        "rpm": 2000,
+        "nm": 275
+      },
+      {
+        "rpm": 3000,
+        "nm": 275
+      },
+      {
+        "rpm": 4000,
+        "nm": 275
+      },
+      {
+        "rpm": 5000,
+        "nm": 261
+      },
+      {
+        "rpm": 6000,
+        "nm": 234
+      },
+      {
+        "rpm": 7000,
+        "nm": 193
+      },
+      {
+        "rpm": 8000,
+        "nm": 165
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "2JZ-GTE",
+    "origin_car": "Toyota Supra A80",
+    "displacement_cc": 2997,
+    "cylinder_count": 6,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "320hp",
+    "stock_torque_nm_at_rpm": "427Nm",
+    "redline_rpm": 7500,
+    "idle_rpm": 800,
+    "engine_weight_kg": 230,
+    "engine_width_mm": 600,
+    "engine_length_mm": 800,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 48
+      },
+      {
+        "rpm": 2000,
+        "hp": 120
+      },
+      {
+        "rpm": 3000,
+        "hp": 180
+      },
+      {
+        "rpm": 4000,
+        "hp": 240
+      },
+      {
+        "rpm": 5000,
+        "hp": 285
+      },
+      {
+        "rpm": 6000,
+        "hp": 306
+      },
+      {
+        "rpm": 7000,
+        "hp": 294
+      },
+      {
+        "rpm": 8000,
+        "hp": 288
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 342
+      },
+      {
+        "rpm": 2000,
+        "nm": 427
+      },
+      {
+        "rpm": 3000,
+        "nm": 427
+      },
+      {
+        "rpm": 4000,
+        "nm": 427
+      },
+      {
+        "rpm": 5000,
+        "nm": 406
+      },
+      {
+        "rpm": 6000,
+        "nm": 363
+      },
+      {
+        "rpm": 7000,
+        "nm": 299
+      },
+      {
+        "rpm": 8000,
+        "nm": 256
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "B58B30",
+    "origin_car": "Toyota GR Supra A90",
+    "displacement_cc": 2998,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "340hp",
+    "stock_torque_nm_at_rpm": "500Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 139,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 56
+      },
+      {
+        "rpm": 2000,
+        "hp": 140
+      },
+      {
+        "rpm": 3000,
+        "hp": 211
+      },
+      {
+        "rpm": 4000,
+        "hp": 281
+      },
+      {
+        "rpm": 5000,
+        "hp": 334
+      },
+      {
+        "rpm": 6000,
+        "hp": 358
+      },
+      {
+        "rpm": 7000,
+        "hp": 344
+      },
+      {
+        "rpm": 8000,
+        "hp": 337
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 400
+      },
+      {
+        "rpm": 2000,
+        "nm": 500
+      },
+      {
+        "rpm": 3000,
+        "nm": 500
+      },
+      {
+        "rpm": 4000,
+        "nm": 500
+      },
+      {
+        "rpm": 5000,
+        "nm": 475
+      },
+      {
+        "rpm": 6000,
+        "nm": 425
+      },
+      {
+        "rpm": 7000,
+        "nm": 350
+      },
+      {
+        "rpm": 8000,
+        "nm": 300
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "FA20",
+    "origin_car": "Toyota GT86",
+    "displacement_cc": 1998,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "200hp",
+    "stock_torque_nm_at_rpm": "205Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 160,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 23
+      },
+      {
+        "rpm": 2000,
+        "hp": 58
+      },
+      {
+        "rpm": 3000,
+        "hp": 86
+      },
+      {
+        "rpm": 4000,
+        "hp": 115
+      },
+      {
+        "rpm": 5000,
+        "hp": 137
+      },
+      {
+        "rpm": 6000,
+        "hp": 147
+      },
+      {
+        "rpm": 7000,
+        "hp": 142
+      },
+      {
+        "rpm": 8000,
+        "hp": 138
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 164
+      },
+      {
+        "rpm": 2000,
+        "nm": 205
+      },
+      {
+        "rpm": 3000,
+        "nm": 205
+      },
+      {
+        "rpm": 4000,
+        "nm": 205
+      },
+      {
+        "rpm": 5000,
+        "nm": 195
+      },
+      {
+        "rpm": 6000,
+        "nm": 174
+      },
+      {
+        "rpm": 7000,
+        "nm": 144
+      },
+      {
+        "rpm": 8000,
+        "nm": 123
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "G16E-GTS",
+    "origin_car": "Toyota GR Yaris (2026 Facelift)",
+    "displacement_cc": 1618,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "280hp",
+    "stock_torque_nm_at_rpm": "390Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 109,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 44
+      },
+      {
+        "rpm": 2000,
+        "hp": 110
+      },
+      {
+        "rpm": 3000,
+        "hp": 164
+      },
+      {
+        "rpm": 4000,
+        "hp": 219
+      },
+      {
+        "rpm": 5000,
+        "hp": 261
+      },
+      {
+        "rpm": 6000,
+        "hp": 280
+      },
+      {
+        "rpm": 7000,
+        "hp": 268
+      },
+      {
+        "rpm": 8000,
+        "hp": 263
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 312
+      },
+      {
+        "rpm": 2000,
+        "nm": 390
+      },
+      {
+        "rpm": 3000,
+        "nm": 390
+      },
+      {
+        "rpm": 4000,
+        "nm": 390
+      },
+      {
+        "rpm": 5000,
+        "nm": 371
+      },
+      {
+        "rpm": 6000,
+        "nm": 332
+      },
+      {
+        "rpm": 7000,
+        "nm": 273
+      },
+      {
+        "rpm": 8000,
+        "nm": 234
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "EJ207",
+    "origin_car": "Subaru Impreza WRX STI (GC8)",
+    "displacement_cc": 1994,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "280hp",
+    "stock_torque_nm_at_rpm": "353Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 160,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 40
+      },
+      {
+        "rpm": 2000,
+        "hp": 99
+      },
+      {
+        "rpm": 3000,
+        "hp": 149
+      },
+      {
+        "rpm": 4000,
+        "hp": 198
+      },
+      {
+        "rpm": 5000,
+        "hp": 235
+      },
+      {
+        "rpm": 6000,
+        "hp": 253
+      },
+      {
+        "rpm": 7000,
+        "hp": 243
+      },
+      {
+        "rpm": 8000,
+        "hp": 238
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 282
+      },
+      {
+        "rpm": 2000,
+        "nm": 353
+      },
+      {
+        "rpm": 3000,
+        "nm": 353
+      },
+      {
+        "rpm": 4000,
+        "nm": 353
+      },
+      {
+        "rpm": 5000,
+        "nm": 335
+      },
+      {
+        "rpm": 6000,
+        "nm": 300
+      },
+      {
+        "rpm": 7000,
+        "nm": 247
+      },
+      {
+        "rpm": 8000,
+        "nm": 212
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "EJ257",
+    "origin_car": "Subaru Impreza WRX STI (GD)",
+    "displacement_cc": 2457,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "300hp",
+    "stock_torque_nm_at_rpm": "407Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 165,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 46
+      },
+      {
+        "rpm": 2000,
+        "hp": 114
+      },
+      {
+        "rpm": 3000,
+        "hp": 171
+      },
+      {
+        "rpm": 4000,
+        "hp": 229
+      },
+      {
+        "rpm": 5000,
+        "hp": 272
+      },
+      {
+        "rpm": 6000,
+        "hp": 292
+      },
+      {
+        "rpm": 7000,
+        "hp": 280
+      },
+      {
+        "rpm": 8000,
+        "hp": 274
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 326
+      },
+      {
+        "rpm": 2000,
+        "nm": 407
+      },
+      {
+        "rpm": 3000,
+        "nm": 407
+      },
+      {
+        "rpm": 4000,
+        "nm": 407
+      },
+      {
+        "rpm": 5000,
+        "nm": 387
+      },
+      {
+        "rpm": 6000,
+        "nm": 346
+      },
+      {
+        "rpm": 7000,
+        "nm": 285
+      },
+      {
+        "rpm": 8000,
+        "nm": 244
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "1.8T 20V BAM",
+    "origin_car": "Audi TT 8N",
+    "displacement_cc": 1781,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "225hp",
+    "stock_torque_nm_at_rpm": "280Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 145,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 31
+      },
+      {
+        "rpm": 2000,
+        "hp": 79
+      },
+      {
+        "rpm": 3000,
+        "hp": 118
+      },
+      {
+        "rpm": 4000,
+        "hp": 157
+      },
+      {
+        "rpm": 5000,
+        "hp": 187
+      },
+      {
+        "rpm": 6000,
+        "hp": 201
+      },
+      {
+        "rpm": 7000,
+        "hp": 193
+      },
+      {
+        "rpm": 8000,
+        "hp": 189
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 224
+      },
+      {
+        "rpm": 2000,
+        "nm": 280
+      },
+      {
+        "rpm": 3000,
+        "nm": 280
+      },
+      {
+        "rpm": 4000,
+        "nm": 280
+      },
+      {
+        "rpm": 5000,
+        "nm": 266
+      },
+      {
+        "rpm": 6000,
+        "nm": 238
+      },
+      {
+        "rpm": 7000,
+        "nm": 196
+      },
+      {
+        "rpm": 8000,
+        "nm": 168
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "2.5 TFSI DAZA",
+    "origin_car": "Audi RS3 8V",
+    "displacement_cc": 2480,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "400hp",
+    "stock_torque_nm_at_rpm": "480Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 160,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 54
+      },
+      {
+        "rpm": 2000,
+        "hp": 135
+      },
+      {
+        "rpm": 3000,
+        "hp": 202
+      },
+      {
+        "rpm": 4000,
+        "hp": 270
+      },
+      {
+        "rpm": 5000,
+        "hp": 320
+      },
+      {
+        "rpm": 6000,
+        "hp": 344
+      },
+      {
+        "rpm": 7000,
+        "hp": 330
+      },
+      {
+        "rpm": 8000,
+        "hp": 324
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 384
+      },
+      {
+        "rpm": 2000,
+        "nm": 480
+      },
+      {
+        "rpm": 3000,
+        "nm": 480
+      },
+      {
+        "rpm": 4000,
+        "nm": 480
+      },
+      {
+        "rpm": 5000,
+        "nm": 456
+      },
+      {
+        "rpm": 6000,
+        "nm": 408
+      },
+      {
+        "rpm": 7000,
+        "nm": 336
+      },
+      {
+        "rpm": 8000,
+        "nm": 288
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "4.2 FSI V8",
+    "origin_car": "Audi R8 Gen1",
+    "displacement_cc": 4163,
+    "cylinder_count": 8,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "420hp",
+    "stock_torque_nm_at_rpm": "430Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 198,
+    "engine_width_mm": 600,
+    "engine_length_mm": 700,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 42
+      },
+      {
+        "rpm": 2000,
+        "hp": 103
+      },
+      {
+        "rpm": 3000,
+        "hp": 172
+      },
+      {
+        "rpm": 4000,
+        "hp": 242
+      },
+      {
+        "rpm": 5000,
+        "hp": 287
+      },
+      {
+        "rpm": 6000,
+        "hp": 308
+      },
+      {
+        "rpm": 7000,
+        "hp": 318
+      },
+      {
+        "rpm": 8000,
+        "hp": 315
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 301
+      },
+      {
+        "rpm": 2000,
+        "nm": 366
+      },
+      {
+        "rpm": 3000,
+        "nm": 409
+      },
+      {
+        "rpm": 4000,
+        "nm": 430
+      },
+      {
+        "rpm": 5000,
+        "nm": 409
+      },
+      {
+        "rpm": 6000,
+        "nm": 366
+      },
+      {
+        "rpm": 7000,
+        "nm": 323
+      },
+      {
+        "rpm": 8000,
+        "nm": 280
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "B16B",
+    "origin_car": "Honda Civic Type R EK9",
+    "displacement_cc": 1595,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "185hp",
+    "stock_torque_nm_at_rpm": "160Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 135,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "transverse",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 13
+      },
+      {
+        "rpm": 2000,
+        "hp": 29
+      },
+      {
+        "rpm": 3000,
+        "hp": 47
+      },
+      {
+        "rpm": 4000,
+        "hp": 67
+      },
+      {
+        "rpm": 5000,
+        "hp": 90
+      },
+      {
+        "rpm": 6000,
+        "hp": 121
+      },
+      {
+        "rpm": 7000,
+        "hp": 157
+      },
+      {
+        "rpm": 8000,
+        "hp": 171
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 96
+      },
+      {
+        "rpm": 2000,
+        "nm": 104
+      },
+      {
+        "rpm": 3000,
+        "nm": 112
+      },
+      {
+        "rpm": 4000,
+        "nm": 120
+      },
+      {
+        "rpm": 5000,
+        "nm": 128
+      },
+      {
+        "rpm": 6000,
+        "nm": 144
+      },
+      {
+        "rpm": 7000,
+        "nm": 160
+      },
+      {
+        "rpm": 8000,
+        "nm": 152
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "K20C1",
+    "origin_car": "Honda Civic Type R FK8",
+    "displacement_cc": 1996,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "320hp",
+    "stock_torque_nm_at_rpm": "400Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 140,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "transverse",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 34
+      },
+      {
+        "rpm": 2000,
+        "hp": 73
+      },
+      {
+        "rpm": 3000,
+        "hp": 118
+      },
+      {
+        "rpm": 4000,
+        "hp": 169
+      },
+      {
+        "rpm": 5000,
+        "hp": 225
+      },
+      {
+        "rpm": 6000,
+        "hp": 303
+      },
+      {
+        "rpm": 7000,
+        "hp": 393
+      },
+      {
+        "rpm": 8000,
+        "hp": 427
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 240
+      },
+      {
+        "rpm": 2000,
+        "nm": 260
+      },
+      {
+        "rpm": 3000,
+        "nm": 280
+      },
+      {
+        "rpm": 4000,
+        "nm": 300
+      },
+      {
+        "rpm": 5000,
+        "nm": 320
+      },
+      {
+        "rpm": 6000,
+        "nm": 360
+      },
+      {
+        "rpm": 7000,
+        "nm": 400
+      },
+      {
+        "rpm": 8000,
+        "nm": 380
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "F20C",
+    "origin_car": "Honda S2000",
+    "displacement_cc": 1997,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "NA",
+    "stock_hp_at_rpm": "240hp",
+    "stock_torque_nm_at_rpm": "208Nm",
+    "redline_rpm": 9000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 148,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 18
+      },
+      {
+        "rpm": 2000,
+        "hp": 38
+      },
+      {
+        "rpm": 3000,
+        "hp": 62
+      },
+      {
+        "rpm": 4000,
+        "hp": 88
+      },
+      {
+        "rpm": 5000,
+        "hp": 117
+      },
+      {
+        "rpm": 6000,
+        "hp": 158
+      },
+      {
+        "rpm": 7000,
+        "hp": 204
+      },
+      {
+        "rpm": 8000,
+        "hp": 222
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 125
+      },
+      {
+        "rpm": 2000,
+        "nm": 135
+      },
+      {
+        "rpm": 3000,
+        "nm": 146
+      },
+      {
+        "rpm": 4000,
+        "nm": 156
+      },
+      {
+        "rpm": 5000,
+        "nm": 166
+      },
+      {
+        "rpm": 6000,
+        "nm": 187
+      },
+      {
+        "rpm": 7000,
+        "nm": 208
+      },
+      {
+        "rpm": 8000,
+        "nm": 198
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 0,
+    "intercooler_type": "Yok",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili."
+  },
+  {
+    "engine_code": "1.4 Kappa MPI",
+    "manufacturer": "Hyundai",
+    "displacement_cc": 1368,
+    "layout": "Inline-4",
+    "induction": "Atmosferik",
+    "stock_hp_at_rpm": "100@6000",
+    "stock_torque_nm_at_rpm": "133@4000",
+    "redline_rpm": 6500,
+    "idle_rpm": 800,
+    "weight_kg": 95,
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 1067200
+      },
+      {
+        "rpm": 2000,
+        "nm": 1334000
+      },
+      {
+        "rpm": 3000,
+        "nm": 1334000
+      },
+      {
+        "rpm": 4000,
+        "nm": 1334000
+      },
+      {
+        "rpm": 5000,
+        "nm": 1267300
+      },
+      {
+        "rpm": 6000,
+        "nm": 1133900
+      },
+      {
+        "rpm": 7000,
+        "nm": 933800
+      },
+      {
+        "rpm": 8000,
+        "nm": 800400
+      }
+    ],
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 149869
+      },
+      {
+        "rpm": 2000,
+        "hp": 374672
+      },
+      {
+        "rpm": 3000,
+        "hp": 562008
+      },
+      {
+        "rpm": 4000,
+        "hp": 749343
+      },
+      {
+        "rpm": 5000,
+        "hp": 889845
+      },
+      {
+        "rpm": 6000,
+        "hp": 955413
+      },
+      {
+        "rpm": 7000,
+        "hp": 917946
+      },
+      {
+        "rpm": 8000,
+        "hp": 899212
+      }
+    ]
+  },
+  {
+    "engine_code": "1.33 Dual VVT-i (1NR-FE)",
+    "manufacturer": "Toyota",
+    "displacement_cc": 1329,
+    "layout": "Inline-4",
+    "induction": "Atmosferik",
+    "stock_hp_at_rpm": "101@6000",
+    "stock_torque_nm_at_rpm": "132@3800",
+    "redline_rpm": 6500,
+    "idle_rpm": 700,
+    "weight_kg": 90,
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 1059040
+      },
+      {
+        "rpm": 2000,
+        "nm": 1323800
+      },
+      {
+        "rpm": 3000,
+        "nm": 1323800
+      },
+      {
+        "rpm": 4000,
+        "nm": 1323800
+      },
+      {
+        "rpm": 5000,
+        "nm": 1257610
+      },
+      {
+        "rpm": 6000,
+        "nm": 1125230
+      },
+      {
+        "rpm": 7000,
+        "nm": 926660
+      },
+      {
+        "rpm": 8000,
+        "nm": 794280
+      }
+    ],
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 148723
+      },
+      {
+        "rpm": 2000,
+        "hp": 371807
+      },
+      {
+        "rpm": 3000,
+        "hp": 557710
+      },
+      {
+        "rpm": 4000,
+        "hp": 743614
+      },
+      {
+        "rpm": 5000,
+        "hp": 883041
+      },
+      {
+        "rpm": 6000,
+        "hp": 948108
+      },
+      {
+        "rpm": 7000,
+        "hp": 910927
+      },
+      {
+        "rpm": 8000,
+        "hp": 892337
+      }
+    ]
+  },
+  {
+    "engine_code": "1.4 D-4D (1ND-TV)",
+    "manufacturer": "Toyota",
+    "displacement_cc": 1364,
+    "layout": "Inline-4",
+    "induction": "Turbo Dizel",
+    "stock_hp_at_rpm": "90@3800",
+    "stock_torque_nm_at_rpm": "205@1800",
+    "redline_rpm": 5000,
+    "idle_rpm": 800,
+    "weight_kg": 120,
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 1641440
+      },
+      {
+        "rpm": 2000,
+        "nm": 2051800
+      },
+      {
+        "rpm": 3000,
+        "nm": 2051800
+      },
+      {
+        "rpm": 4000,
+        "nm": 2051800
+      },
+      {
+        "rpm": 5000,
+        "nm": 1949210
+      },
+      {
+        "rpm": 6000,
+        "nm": 1744030
+      },
+      {
+        "rpm": 7000,
+        "nm": 1436260
+      },
+      {
+        "rpm": 8000,
+        "nm": 1231080
+      }
+    ],
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 230510
+      },
+      {
+        "rpm": 2000,
+        "hp": 576275
+      },
+      {
+        "rpm": 3000,
+        "hp": 864413
+      },
+      {
+        "rpm": 4000,
+        "hp": 1152551
+      },
+      {
+        "rpm": 5000,
+        "hp": 1368654
+      },
+      {
+        "rpm": 6000,
+        "hp": 1469502
+      },
+      {
+        "rpm": 7000,
+        "hp": 1411875
+      },
+      {
+        "rpm": 8000,
+        "hp": 1383061
+      }
+    ]
+  },
+  {
+    "engine_code": "1.6 CDTI (B16DTH)",
+    "manufacturer": "Opel",
+    "displacement_cc": 1598,
+    "layout": "Inline-4",
+    "induction": "Turbo Dizel",
+    "stock_hp_at_rpm": "136@3500",
+    "stock_torque_nm_at_rpm": "320@2000",
+    "redline_rpm": 5000,
+    "idle_rpm": 800,
+    "weight_kg": 135,
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 1921200
+      },
+      {
+        "rpm": 2000,
+        "nm": 2081300
+      },
+      {
+        "rpm": 3000,
+        "nm": 2241400
+      },
+      {
+        "rpm": 4000,
+        "nm": 2401500
+      },
+      {
+        "rpm": 5000,
+        "nm": 2561600
+      },
+      {
+        "rpm": 6000,
+        "nm": 2881800
+      },
+      {
+        "rpm": 7000,
+        "nm": 3202000
+      },
+      {
+        "rpm": 8000,
+        "nm": 3041900
+      }
+    ],
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 269797
+      },
+      {
+        "rpm": 2000,
+        "hp": 584561
+      },
+      {
+        "rpm": 3000,
+        "hp": 944291
+      },
+      {
+        "rpm": 4000,
+        "hp": 1348987
+      },
+      {
+        "rpm": 5000,
+        "hp": 1798649
+      },
+      {
+        "rpm": 6000,
+        "hp": 2428176
+      },
+      {
+        "rpm": 7000,
+        "hp": 3147636
+      },
+      {
+        "rpm": 8000,
+        "hp": 3417433
+      }
+    ]
+  }
+]
