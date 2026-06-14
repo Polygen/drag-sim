@@ -95,7 +95,9 @@ function App() {
                   value={raceSettings.mode}
                   onChange={e => setRaceSettings({...raceSettings, mode: e.target.value})}
                 >
-                  <option value="400m">400 Metre Drag (Sabit Mesafe)</option>
+                  <option value="200m">200 Metre Drag (1/8 Mil)</option>
+                  <option value="400m">400 Metre Drag (1/4 Mil)</option>
+                  <option value="800m">800 Metre Drag (1/2 Mil)</option>
                   <option value="0-100">0-100 km/h (Süre Ölçümü)</option>
                   <option value="100-200">100-200 km/h (Rolling)</option>
                   <option value="Top Speed">Son Hız (Top Speed Sınaması)</option>

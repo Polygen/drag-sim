@@ -8,6 +8,8 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
   const [results, setResults] = useState(null);
   const [animProgress, setAnimProgress] = useState(0);
   const [replayKey, setReplayKey] = useState(0);
+  const [realisticScale, setRealisticScale] = useState(true);
+  const scaleRef = useRef(true);
 
   useEffect(() => {
     setStatus('Fizik hesaplanıyor...');
@@ -125,15 +127,20 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
 
     // Bulunan maksimum süreyi al
     let maxSimTimeS = 0;
+    let minSimTimeS = Infinity;
     allResults.forEach(r => {
       if (r.elapsed_time_s > maxSimTimeS) maxSimTimeS = r.elapsed_time_s;
+      if (r.elapsed_time_s < minSimTimeS) minSimTimeS = r.elapsed_time_s;
     });
 
-    const isSpeedMode = raceSettings.mode !== '400m';
+    const isSpeedMode = !['200m', '400m', '800m'].includes(raceSettings.mode);
     
     // Görüntü alanı için piksel hesabı
     let trackLengthPx = width - 150;
-    let pixelsPerMeter = trackLengthPx / 400; 
+    let targetDist = 400;
+    if (raceSettings.mode === '200m') targetDist = 200;
+    if (raceSettings.mode === '800m') targetDist = 800;
+    let pixelsPerMeter = trackLengthPx / targetDist; 
     
     // 0-100 veya 100-200 için en uzun giden arabanın mesafesini pist uzunluğu kabul et
     if (isSpeedMode) {
@@ -154,9 +161,14 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
       const elapsedMs = timestamp - startTime;
       const elapsedSimS = elapsedMs / 1000; // Real-time mapping
 
-      if (elapsedSimS >= maxSimTimeS + 1) { // Bitişten sonra 1 sn bekle
-        setStatus('Yarış Bitti!');
-        return; // Stop loop
+      let drawTimeS = elapsedSimS;
+      if (elapsedSimS >= minSimTimeS) {
+         drawTimeS = minSimTimeS; // Yarışın galibi bitiş çizgisini geçtiği an herkesi dondur (farkı göstermek için)
+      }
+
+      if (elapsedSimS >= minSimTimeS + 3) { // Bitişten sonra donuk kalmaya devam et
+        setStatus(prev => prev !== 'Yarış Bitti!' ? 'Yarış Bitti!' : prev);
+        // Loop bitmez, çalışmaya devam eder (böylece scale butonu anında etki eder)
       }
 
       ctx.clearRect(0, 0, width, height);
@@ -169,7 +181,7 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
       ctx.fillStyle = '#fff';
       if (!isSpeedMode) {
         ctx.fillRect(100, 0, 5, height); // Start
-        ctx.fillRect(100 + 400 * pixelsPerMeter, 0, 5, height); // Finish
+        ctx.fillRect(100 + targetDist * pixelsPerMeter, 0, 5, height); // Finish
       } else {
         ctx.fillStyle = '#444';
         ctx.fillText(`Mod: ${raceSettings.mode}`, 10, 20);
@@ -184,7 +196,7 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
         // Find the exact frame for the current real-time
         let state = ts[ts.length - 1]; // default to end state
         for (let i = 0; i < ts.length; i++) {
-          if (ts[i].time >= elapsedSimS) {
+          if (ts[i].time >= drawTimeS) {
             state = ts[i];
             break;
           }
@@ -203,6 +215,12 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
         ctx.save();
         ctx.translate(carX, carY);
 
+        const carRealLengthM = 4.5;
+        const carRealWidthM = 2.0;
+        const isRealistic = scaleRef.current;
+        const carLenPx = isRealistic ? (carRealLengthM * pixelsPerMeter) : 40;
+        const carWidthPx = isRealistic ? (carRealWidthM * pixelsPerMeter) : 20;
+
         // Fish-tail (Yalpalama) Efekti
         // Daha gerçekçi ve yumuşatılmış
         if (state.slipPct > 5 && state.gear <= 3) {
@@ -216,7 +234,7 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
           // Duman Efekti
           ctx.fillStyle = `rgba(255, 255, 255, ${Math.min(state.slipPct/100, 0.7)})`;
           ctx.beginPath();
-          const smokeX = res.carInfo.drivetrain === 'FWD' ? 10 : -20;
+          const smokeX = res.carInfo.drivetrain === 'FWD' ? (carLenPx / 4) : (-carLenPx / 2);
           ctx.arc(smokeX, (Math.random() - 0.5) * 10, 15 + Math.random() * 15, 0, Math.PI * 2);
           ctx.fill();
         }
@@ -225,30 +243,31 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
         if (res.carInfo.nosShot > 0 && state.gear > 1 && state.speed_kmh > 50 && !isFinished(state, raceSettings.mode)) {
           ctx.fillStyle = '#3b82f6';
           ctx.beginPath();
-          ctx.moveTo(-20, -5);
-          ctx.lineTo(-40 - Math.random() * 20, 0);
-          ctx.lineTo(-20, 5);
+          ctx.moveTo(-carLenPx / 2, -5);
+          ctx.lineTo(-carLenPx / 2 - 20 - Math.random() * 20, 0);
+          ctx.lineTo(-carLenPx / 2, 5);
           ctx.fill();
         }
 
         // Araç çizimi
         ctx.fillStyle = res.laneIndex % 2 === 0 ? '#ef4444' : '#3b82f6';
-        ctx.fillRect(-20, -10, 40, 20); // Şasi
+        ctx.fillRect(-carLenPx / 2, -carWidthPx / 2, carLenPx, carWidthPx); // Şasi
         
         ctx.fillStyle = '#000';
-        ctx.fillRect(-5, -8, 15, 16); // Cam
+        // Camı arabanın ortasına/biraz önüne koyalım
+        ctx.fillRect(-carLenPx * 0.1, -carWidthPx * 0.4, carLenPx * 0.3, carWidthPx * 0.8); // Cam
         
         ctx.restore();
 
         // Araç İsmi ve Hız
         ctx.fillStyle = '#fff';
         ctx.font = '12px Arial';
-        ctx.fillText(`${res.carInfo.name}`, Math.max(10, carX - 20), carY - 15);
+        ctx.fillText(`${res.carInfo.name}`, Math.max(10, carX - carLenPx/2), carY - 15);
         ctx.fillStyle = '#aaa';
-        ctx.fillText(`${state.speed_kmh.toFixed(0)} km/h - Vites: ${state.gear}`, Math.max(10, carX - 20), carY + 20);
+        ctx.fillText(`${state.speed_kmh.toFixed(0)} km/h - Vites: ${state.gear}`, Math.max(10, carX - carLenPx/2), carY + 20);
       });
 
-      setAnimProgress((elapsedSimS / maxSimTimeS) * 100);
+      setAnimProgress((elapsedSimS / minSimTimeS) * 100);
       animationFrameId = requestAnimationFrame(draw);
     };
 
@@ -258,7 +277,9 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
   };
 
   const isFinished = (state, mode) => {
+    if (mode === '200m' && state.distance >= 200) return true;
     if (mode === '400m' && state.distance >= 400) return true;
+    if (mode === '800m' && state.distance >= 800) return true;
     if (mode === '0-100' && state.speed_kmh >= 100) return true;
     if (mode === '100-200' && state.speed_kmh >= 200) return true;
     // Top speed mode finishes when simulation finishes naturally
@@ -279,16 +300,27 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
           <p className="text-gray-400">{status}</p>
         </div>
         {results && (
-          <button 
-            onClick={() => {
-              setResults(null);
-              setAnimProgress(0);
-              setReplayKey(k => k + 1);
-            }} 
-            className="ml-auto btn-primary bg-blue-600 text-white hover:bg-blue-500 flex items-center gap-2"
-          >
-            <RotateCcw size={20} /> Yeniden Oynat
-          </button>
+          <div className="ml-auto flex gap-2">
+            <button 
+              onClick={() => {
+                scaleRef.current = !scaleRef.current;
+                setRealisticScale(scaleRef.current);
+              }} 
+              className="btn-primary bg-gray-700 text-white hover:bg-gray-600 flex items-center gap-2"
+            >
+              {realisticScale ? 'Büyük Araç Görünümü' : 'Gerçek Boyutlu Görünüm'}
+            </button>
+            <button 
+              onClick={() => {
+                setResults(null);
+                setAnimProgress(0);
+                setReplayKey(k => k + 1);
+              }} 
+              className="btn-primary bg-blue-600 text-white hover:bg-blue-500 flex items-center gap-2"
+            >
+              <RotateCcw size={20} /> Yeniden Oynat
+            </button>
+          </div>
         )}
       </div>
 
@@ -320,27 +352,62 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
                   <th className="pb-3 pl-4">Sıra</th>
                   <th className="pb-3">Araç</th>
                   <th className="pb-3">{raceSettings.mode === 'Top Speed' ? 'Ulaşılan Süre' : 'Süre'}</th>
+                  <th className="pb-3">Fark</th>
                   <th className="pb-3">{raceSettings.mode === 'Top Speed' ? 'Bitiş Hızı (V-MAX)' : 'Bitiş Hızı'}</th>
                   <th className="pb-3">Patinaj Süresi</th>
                 </tr>
               </thead>
               <tbody>
-                {results.map((r, i) => (
-                  <tr key={i} className={`border-b border-gray-800/50 ${i === 0 ? 'bg-yellow-900/10' : ''}`}>
-                    <td className="py-4 pl-4 font-bold text-xl text-gray-500">#{i + 1}</td>
-                    <td className="py-4">
-                      <div className="font-bold text-white">{r.carInfo.name}</div>
-                      <div className="text-xs text-gray-500">{r.carInfo.hp} HP / {r.carInfo.weight} kg</div>
-                    </td>
-                    <td className={`py-4 font-mono ${raceSettings.mode !== 'Top Speed' ? 'text-amber-400 text-xl' : 'text-gray-400'}`}>
-                      {r.elapsed_time_s.toFixed(3)}s
-                    </td>
-                    <td className={`py-4 font-mono ${raceSettings.mode === 'Top Speed' ? 'text-amber-400 text-2xl font-bold' : 'text-gray-300'}`}>
-                      {r.speed_at_end_kmh.toFixed(1)} km/h
-                    </td>
-                    <td className="py-4 text-sm text-red-400">{r.total_slip_time_s.toFixed(2)}s patinaj</td>
-                  </tr>
-                ))}
+                {results.map((r, i) => {
+                  let gapText = "-";
+                  if (i > 0 && raceSettings.mode !== 'Top Speed') {
+                    const winnerTime = results[0].elapsed_time_s;
+                    const ts = r.time_series;
+                    let distAtWin = ts[ts.length - 1].distance;
+                    for (let j = 0; j < ts.length; j++) {
+                       if (ts[j].time >= winnerTime) {
+                          if (j > 0) {
+                             const p = ts[j - 1];
+                             const c = ts[j];
+                             const ratio = (winnerTime - p.time) / (c.time - p.time);
+                             distAtWin = p.distance + ratio * (c.distance - p.distance);
+                          } else {
+                             distAtWin = ts[j].distance;
+                          }
+                          break;
+                       }
+                    }
+                    let winnerDist = 400;
+                    if (raceSettings.mode === '200m') winnerDist = 200;
+                    if (raceSettings.mode === '800m') winnerDist = 800;
+                    if (raceSettings.mode === '0-100' || raceSettings.mode === '100-200') {
+                       winnerDist = results[0].time_series[results[0].time_series.length - 1].distance;
+                    }
+                    const gapM = Math.max(0, winnerDist - distAtWin);
+                    const gapB = gapM / 4.5;
+                    gapText = `+${(r.elapsed_time_s - winnerTime).toFixed(3)}s (${gapM.toFixed(1)}m / ${gapB.toFixed(1)} Boy)`;
+                  }
+
+                  return (
+                    <tr key={i} className={`border-b border-gray-800/50 ${i === 0 ? 'bg-yellow-900/10' : ''}`}>
+                      <td className="py-4 pl-4 font-bold text-xl text-gray-500">#{i + 1}</td>
+                      <td className="py-4">
+                        <div className="font-bold text-white">{r.carInfo.name}</div>
+                        <div className="text-xs text-gray-500">{r.carInfo.hp} HP / {r.carInfo.weight} kg</div>
+                      </td>
+                      <td className={`py-4 font-mono ${raceSettings.mode !== 'Top Speed' ? 'text-amber-400 text-xl' : 'text-gray-400'}`}>
+                        {r.elapsed_time_s.toFixed(3)}s
+                      </td>
+                      <td className="py-4 font-mono text-gray-300">
+                        {gapText}
+                      </td>
+                      <td className={`py-4 font-mono ${raceSettings.mode === 'Top Speed' ? 'text-amber-400 text-2xl font-bold' : 'text-gray-300'}`}>
+                        {r.speed_at_end_kmh.toFixed(1)} km/h
+                      </td>
+                      <td className="py-4 text-sm text-red-400">{r.total_slip_time_s.toFixed(2)}s patinaj</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

@@ -195,8 +195,9 @@ export function simulate(config) {
 
     // Hedef Kontrolü
     const currentSpeedKmh = speed_ms * 3.6;
-    if (mode === '400m' && distance_m >= 400.208) isFinished = true;
-    if (mode === '5000m' && distance_m >= 5000) isFinished = true;
+    if (mode === '200m' && distance_m >= 200) isFinished = true;
+    if (mode === '400m' && distance_m >= 400) isFinished = true;
+    if (mode === '800m' && distance_m >= 800) isFinished = true;
     if (mode === '0-100' && currentSpeedKmh >= 100) isFinished = true;
     if (mode === '100-200' && currentSpeedKmh >= 200) isFinished = true;
     if (mode === 'Top Speed') {
