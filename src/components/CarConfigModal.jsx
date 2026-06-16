@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import vehiclesData from '../data/vehicles.json';
 import enginesData from '../data/engines.json';
 import transmissionsData from '../data/transmissions.json';
-import { X, Save, Car } from 'lucide-react';
+import { X, Save, Car, Settings } from 'lucide-react';
 
 export default function CarConfigModal({ onClose, onSave, initialConfig }) {
   const [selectedBase, setSelectedBase] = useState('');
@@ -16,7 +16,8 @@ export default function CarConfigModal({ onClose, onSave, initialConfig }) {
     nosShot: 0,
     engine: null,
     transmission: null,
-    hasLimiter: true
+    hasLimiter: true,
+    boostByGear: { 1: '', 2: '', 3: '', 4: '', 5: '', 6: '' }
   });
 
   // Seçilen baz araca göre verileri doldur (sadece yeni araç oluştururken veya yeni şablon seçildiğinde)
@@ -39,7 +40,8 @@ export default function CarConfigModal({ onClose, onSave, initialConfig }) {
           engine: defaultEngine || enginesData[0],
           transmission: defaultTrans,
           top_speed_kmh: v.top_speed_kmh,
-          hasLimiter: true
+          hasLimiter: true,
+          boostByGear: { 1: '', 2: '', 3: '', 4: '', 5: '', 6: '' }
         });
       }
     }
@@ -243,6 +245,29 @@ export default function CarConfigModal({ onClose, onSave, initialConfig }) {
               Elektronik Hız Kesici (Top Speed Limiter) Aktif
             </label>
             <span className="text-xs text-gray-500 ml-auto">Kapatılırsa mekanik sınıra (Redline) kadar hızlanır</span>
+          </div>
+
+          <div className="border-t border-gray-800 pt-4 mt-4">
+            <h4 className="text-sm font-bold text-gray-300 mb-2 flex items-center gap-2">
+              <Settings size={16} className="text-blue-500" /> Gelişmiş ECU Ayarları (Boost by Gear)
+            </h4>
+            <p className="text-xs text-gray-500 mb-3">Tekerlek patinaja düşüyorsa alt viteslerde beygir gücünü kısıtlayabilirsiniz. Boş bırakırsanız limitsiz güç verilir.</p>
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-2">
+              {[1, 2, 3, 4, 5, 6].map(gear => (
+                <div key={gear}>
+                  <label className="block text-xs text-gray-400 mb-1">{gear}. Vites (HP)</label>
+                  <input 
+                    type="number" min="50" max="3000" placeholder="Limitsiz"
+                    className="w-full bg-black border border-gray-700 rounded p-1.5 text-white text-sm focus:border-red-500 focus:outline-none"
+                    value={config.boostByGear?.[gear] || ''}
+                    onChange={(e) => {
+                       const val = e.target.value;
+                       setConfig({...config, boostByGear: {...(config.boostByGear || {}), [gear]: val ? Number(val) : ''}})
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="pt-4 flex gap-3">

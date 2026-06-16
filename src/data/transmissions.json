@@ -1,5 +1,29 @@
 [
   {
+    "transmission_code": "BVM6 Peugeot 6-speed Manual",
+    "origin_car": "Peugeot 208 GTI / 308",
+    "type": "Manuel",
+    "gear_count": 6,
+    "gear_ratios": [
+      3.54,
+      1.92,
+      1.32,
+      0.97,
+      0.76,
+      0.65
+    ],
+    "final_drive_ratio": 4.17,
+    "max_torque_capacity_nm": 450,
+    "shift_time_ms": 200,
+    "weight_kg": 50,
+    "efficiency_pct": 95,
+    "compatible_engine_codes": [
+      "1.6 THP (EP6DTS)",
+      "1.6 THP (EP6CDTX)"
+    ],
+    "notes": "PSA Grubu BVM6 Şanzımanı."
+  },
+  {
     "transmission_code": "5-speed Manual",
     "origin_car": "Peugeot 207 RC",
     "type": "Manuel",
@@ -127,8 +151,8 @@
       2.05,
       1.3,
       0.9,
-      0.91,
-      0.76
+      0.673,
+      0.562
     ],
     "final_drive_ratio": 4.11,
     "max_torque_capacity_nm": 420,
@@ -150,8 +174,8 @@
       2.36,
       1.75,
       1.32,
-      1,
-      0.77
+      0.727,
+      0.559
     ],
     "final_drive_ratio": 4.06,
     "max_torque_capacity_nm": 732,
@@ -170,12 +194,12 @@
     "gear_count": 7,
     "gear_ratios": [
       3.56,
-      2.52,
-      1.67,
+      1.833,
+      1.215,
       1.02,
       0.78,
-      0.65,
-      0.57
+      0.473,
+      0.415
     ],
     "final_drive_ratio": 4.73,
     "max_torque_capacity_nm": 720,
@@ -297,5 +321,49 @@
     "compatible_engine_codes": [
       "1.6 CDTI (B16DTH)"
     ]
+  },
+  {
+    "transmission_code": "6-speed Manual (02M)",
+    "type": "Manual",
+    "gear_count": 6,
+    "gear_ratios": {
+      "1": 3.769,
+      "2": 2.087,
+      "3": 1.32,
+      "4": 0.911,
+      "5": 0.902,
+      "6": 0.756
+    },
+    "final_drive_ratio": 3.238,
+    "shift_time_ms_estimated": 250,
+    "weight_kg": 50,
+    "efficiency_pct": 90,
+    "supported_drivetrain": [
+      "FWD",
+      "AWD"
+    ],
+    "notes": "Güçlü dizel motorlar için özel oranlar (Uzun vitesler)."
+  },
+  {
+    "transmission_code": "6-speed DSG (DQ250)",
+    "type": "Dual Clutch (DCT)",
+    "gear_count": 6,
+    "gear_ratios": {
+      "1": 3.46,
+      "2": 2.05,
+      "3": 1.3,
+      "4": 0.9,
+      "5": 0.91,
+      "6": 0.75
+    },
+    "final_drive_ratio": 4.11,
+    "shift_time_ms_estimated": 80,
+    "weight_kg": 90,
+    "efficiency_pct": 88,
+    "supported_drivetrain": [
+      "FWD",
+      "AWD"
+    ],
+    "notes": "Polo GTI ve Golf GTI standart çift kavrama şanzımanı."
   }
 ]

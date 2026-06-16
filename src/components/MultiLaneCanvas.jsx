@@ -82,7 +82,7 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
           tireRadiusM: 0.32,
           redlineRpm: car.engine?.redline_rpm || 7500,
           idleRpm: car.engine?.idle_rpm || 800,
-          launchRpm: (car.engine?.idle_rpm || 800) + 3000,
+          launchRpm: car.launchRpm || ((car.engine?.idle_rpm || 800) + 3000),
           gearRatios,
           finalDriveRatio: finalDrive,
           shiftTimeMs: shiftTime,
@@ -90,13 +90,16 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
           
           // Çevresel ve Pist Faktörleri
           mu: raceSettings.surface === 'vht' ? 1.2 : (raceSettings.surface === 'turkey_asphalt' ? 0.7 : 1.0),
-          tractionFactor: raceSettings.tire === 'slick' ? 1.3 : (raceSettings.tire === 'semi_slick' ? 1.15 : 0.8),
+          tractionFactor: (car.overrideTire || raceSettings.tire) === 'slick' ? 1.3 : ((car.overrideTire || raceSettings.tire) === 'semi_slick' ? 1.15 : 0.8),
           temperatureC: raceSettings.temperature || 20,
           altitudeM: raceSettings.altitude || 0,
           
           torqueCurve: mappedTqCurve,
           nosShot: car.nosShot || 0,
-          topSpeedKmh: car.hasLimiter !== false ? (car.top_speed_kmh || 350) : null
+          topSpeedKmh: car.hasLimiter !== false ? (car.top_speed_kmh || 350) : null,
+          driverStyle: raceSettings.driverStyle || 'balanced',
+          launchGear: raceSettings.launchGear || 1,
+          boostByGear: car.boostByGear || null
         };
 
         const res = simulate(simConfig);

@@ -33,26 +33,26 @@ export function simulate(config) {
   const weightFrontPct = config.weightDistFrontPct;
   const drivetrain = config.drivetrain;
   const wheelbase = config.wheelbaseM;
-  const cogHeight = config.cogHeightM !== undefined ? config.cogHeightM : 0.5;
-  const dragCoefficient = config.dragCoefficient !== undefined ? config.dragCoefficient : 0.3;
-  const frontalArea = config.frontalAreaM2 !== undefined ? config.frontalAreaM2 : 2.0;
-  const crr = config.rollingResistanceCoefficient !== undefined ? config.rollingResistanceCoefficient : 0.012;
-  const tireRadiusM = config.tireRadiusM !== undefined ? config.tireRadiusM : 0.32;
+  const cogHeight = config.cogHeightM || 0.5; // Tahmini 50cm
+  const dragCoefficient = config.dragCoefficient;
+  const frontalArea = config.frontalAreaM2;
+  const crr = config.rollingResistanceCoefficient || 0.012; // Standart sokak
+  const tireRadiusM = config.tireRadiusM || 0.32; // Standart 18-19 inç tekerlek
 
   // Motor özellikleri
   const torqueCurve = config.torqueCurve;
   const redlineRpm = config.redlineRpm;
-  const idleRpm = config.idleRpm !== undefined ? config.idleRpm : 800;
+  const idleRpm = config.idleRpm || 800;
 
   // Şanzıman özellikleri
   const gearRatios = config.gearRatios;
   const finalDrive = config.finalDriveRatio;
   const shiftTimeMs = config.shiftTimeMs;
-  const efficiency = config.efficiencyPct !== undefined ? config.efficiencyPct / 100 : 0.9;
+  const efficiency = config.efficiencyPct / 100;
 
   // Yol ve Lastik
-  const mu = config.mu !== undefined ? config.mu : 1.0;
-  const tractionFactor = config.tractionFactor !== undefined ? config.tractionFactor : 0.8;
+  const mu = config.mu || 1.0;
+  const tractionFactor = config.tractionFactor || 0.8;
   const driverStyle = config.driverStyle || 'balanced';
   
   // Çevresel Faktörler (Hava Yoğunluğu ve Rakım)
@@ -222,6 +222,7 @@ export function simulate(config) {
       const dynamicMassEquivalent = weight * inertiaFactor;
       
       acceleration_ms2 = netForce / dynamicMassEquivalent;
+      if (time_s < 0.005) { console.log({time_s, engineTorque, grossWheelForce, appliedForce, netForce, dynamicMassEquivalent, acceleration_ms2, wheelRpm, engineRpm, isShifting, slipPct}); }
     }
 
     // 8. Hız ve Mesafe Güncelleme

@@ -4090,5 +4090,193 @@
         "hp": 113
       }
     ]
+  },
+  {
+    "engine_code": "1.9 TDI (ARL)",
+    "origin_car": "Volkswagen Golf Mk4 1.9 TDI",
+    "displacement_cc": 1896,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "150hp",
+    "stock_torque_nm_at_rpm": "320Nm",
+    "redline_rpm": 4500,
+    "idle_rpm": 900,
+    "engine_weight_kg": 160,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 650,
+    "orientation": "transverse",
+    "fuel_type_required": "Diesel",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 25
+      },
+      {
+        "rpm": 1500,
+        "hp": 55
+      },
+      {
+        "rpm": 1900,
+        "hp": 85
+      },
+      {
+        "rpm": 2500,
+        "hp": 110
+      },
+      {
+        "rpm": 3000,
+        "hp": 130
+      },
+      {
+        "rpm": 3500,
+        "hp": 145
+      },
+      {
+        "rpm": 4000,
+        "hp": 150
+      },
+      {
+        "rpm": 4500,
+        "hp": 135
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 180
+      },
+      {
+        "rpm": 1500,
+        "nm": 260
+      },
+      {
+        "rpm": 1900,
+        "nm": 320
+      },
+      {
+        "rpm": 2500,
+        "nm": 313
+      },
+      {
+        "rpm": 3000,
+        "nm": 308
+      },
+      {
+        "rpm": 3500,
+        "nm": 295
+      },
+      {
+        "rpm": 4000,
+        "nm": 267
+      },
+      {
+        "rpm": 4500,
+        "nm": 213
+      }
+    ],
+    "compression_ratio": "19.5:1",
+    "max_boost_bar": 1.5,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Efsanevi PD (Pumpe Düse) 1.9 TDI motor. Yazılıma çok açık ve tork canavarı."
+  },
+  {
+    "engine_code": "2.0 TSI EA888 Gen3B",
+    "origin_car": "Volkswagen Polo GTI (AW)",
+    "displacement_cc": 1984,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "200hp",
+    "stock_torque_nm_at_rpm": "320Nm",
+    "redline_rpm": 6500,
+    "idle_rpm": 800,
+    "engine_weight_kg": 135,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "transverse",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 30
+      },
+      {
+        "rpm": 2000,
+        "hp": 90
+      },
+      {
+        "rpm": 3000,
+        "hp": 136
+      },
+      {
+        "rpm": 4000,
+        "hp": 182
+      },
+      {
+        "rpm": 4400,
+        "hp": 200
+      },
+      {
+        "rpm": 5000,
+        "hp": 200
+      },
+      {
+        "rpm": 6000,
+        "hp": 200
+      },
+      {
+        "rpm": 6500,
+        "hp": 185
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 210
+      },
+      {
+        "rpm": 1500,
+        "nm": 320
+      },
+      {
+        "rpm": 2000,
+        "nm": 320
+      },
+      {
+        "rpm": 3000,
+        "nm": 320
+      },
+      {
+        "rpm": 4000,
+        "nm": 320
+      },
+      {
+        "rpm": 4400,
+        "nm": 320
+      },
+      {
+        "rpm": 5000,
+        "nm": 284
+      },
+      {
+        "rpm": 6000,
+        "nm": 237
+      },
+      {
+        "rpm": 6500,
+        "nm": 202
+      }
+    ],
+    "compression_ratio": "11.6:1",
+    "max_boost_bar": 1.1,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "0W-20",
+    "notes": "Yeni nesil B-cycle EA888. Çok esnek bir tork eğrisine sahip."
   }
 ]
