@@ -2,7 +2,8 @@ import { useState } from 'react';
 import CarConfigModal from './components/CarConfigModal';
 import MultiLaneCanvas from './components/MultiLaneCanvas';
 import DynoChartModal from './components/DynoChartModal';
-import { Plus, Play, Trash2, Car, Edit2, Activity } from 'lucide-react';
+import SetupOptimizerPanel from './components/SetupOptimizerPanel';
+import { Plus, Play, Trash2, Car, Edit2, Activity, Sliders } from 'lucide-react';
 
 function App() {
   const [cars, setCars] = useState([]);
@@ -19,6 +20,7 @@ function App() {
   });
   
   const [dynoViewIndex, setDynoViewIndex] = useState(null);
+  const [optimizerCarIndex, setOptimizerCarIndex] = useState(null);
 
   const handleAddCar = (carConfig) => {
     if (editingIndex !== null) {
@@ -39,6 +41,17 @@ function App() {
 
   const removeCar = (idx) => {
     setCars(cars.filter((_, i) => i !== idx));
+  };
+
+  const handleApplyOptimized = (optimizedCar, settingsPatch = {}) => {
+    setCars([...cars, optimizedCar]);
+    // Optimizer grid'de farklı surface/tire test ettiyse yarış koşullarını da
+    // eşitle — yoksa "Ekle" sonrası araç farklı mu/traction'da koşar ve
+    // süreler optimizer'ın raporladığından sapar.
+    if (Object.keys(settingsPatch).length > 0) {
+      setRaceSettings((prev) => ({ ...prev, ...settingsPatch }));
+    }
+    setOptimizerCarIndex(null);
   };
 
   return (
@@ -169,7 +182,14 @@ function App() {
                 {cars.map((car, idx) => (
                   <div key={idx} className="glass-panel p-6 relative group">
                     <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 p-1.5 rounded-lg border border-gray-700">
-                      <button 
+                      <button
+                        onClick={() => setOptimizerCarIndex(idx)}
+                        className="text-gray-400 hover:text-purple-500 transition-colors p-1"
+                        title="Setup Optimizer"
+                      >
+                        <Sliders size={18} />
+                      </button>
+                      <button
                         onClick={() => setDynoViewIndex(idx)}
                         className="text-gray-400 hover:text-green-500 transition-colors p-1"
                         title="Dyno Grafiği"
@@ -231,9 +251,18 @@ function App() {
         )}
         
         {dynoViewIndex !== null && (
-          <DynoChartModal 
-            car={cars[dynoViewIndex]} 
-            onClose={() => setDynoViewIndex(null)} 
+          <DynoChartModal
+            car={cars[dynoViewIndex]}
+            onClose={() => setDynoViewIndex(null)}
+          />
+        )}
+
+        {optimizerCarIndex !== null && (
+          <SetupOptimizerPanel
+            car={cars[optimizerCarIndex]}
+            raceSettings={raceSettings}
+            onClose={() => setOptimizerCarIndex(null)}
+            onApplyToLobby={handleApplyOptimized}
           />
         )}
       </main>

@@ -15,14 +15,15 @@ export function simulate(config) {
   let distance_m = 0;
   let speed_ms = 0;
   let acceleration_ms2 = 0;
-  
-  let currentGearIndex = 0; // 0-indexed (0 = 1. vites)
+
+  let currentGearIndex = 0; // 0-indexed (0 = 1. vites) — 100-200 modunda aşağıda override edilir
   let isShifting = false;
   let shiftTimeRemaining = 0;
   
   let slipTimeTotal = 0;
   const slipEvents = [];
   const gearShifts = [];
+  let nosTrigger = null; // NOS'un ilk aktif olduğu an (sadece kayıt amaçlı)
   const timeSeries = [];
   
   let split60ft = 0;
@@ -74,7 +75,15 @@ export function simulate(config) {
   // Kalkış reaksiyon süresini şimdilik animasyon tarafına bırakıyoruz, burası fiziki hareketten başlıyor
   // Race Mode Ayarları
   const mode = config.raceMode || '400m'; // '400m', '0-100', '100-200'
-  
+
+  // Launch gear: standing start modlarında (200m/400m/800m/0-100) kalkışın yapılacağı vites.
+  // 1-indexed (1 = 1. vites), default 1. gearRatios.length'i aşamaz.
+  // 100-200 rolling start'ta aşağıdaki blok zaten currentGearIndex'i hıza göre ayarlıyor — launch gear yok sayılır.
+  if (mode !== '100-200') {
+    const launchGear = Math.max(1, Math.min(gearRatios.length, config.launchGear || 1));
+    currentGearIndex = launchGear - 1;
+  }
+
   if (mode === '100-200') {
     speed_ms = 100 / 3.6; // 100 km/h = 27.77 m/s
     // Rolling start için uygun vitesi bul (örneğin devrin 3000 üzerinde kaldığı en yüksek vites)
@@ -124,7 +133,7 @@ export function simulate(config) {
 
       // Vites Atma Kararı
       if (engineRpm > redlineRpm - 200 && currentGearIndex < gearRatios.length - 1) {
-        gearShifts.push({ time: time_s, gear: currentGearIndex + 2 });
+        gearShifts.push({ time: time_s, gear: currentGearIndex + 2, rpm: Math.round(engineRpm) });
         currentGearIndex++;
         isShifting = true;
         shiftTimeRemaining = shiftTimeSec;
@@ -141,6 +150,17 @@ export function simulate(config) {
       
       const nosShotHp = config.nosShot || 0;
       if (nosShotHp > 0 && currentGearIndex >= 1 && speed_ms > 13.8) {
+        // İlk aktif olduğu frame'i kaydet (sürücü önerisi için)
+        if (nosTrigger === null) {
+          nosTrigger = {
+            time: time_s,
+            gear: currentGearIndex + 1,
+            // currentSpeedKmh aşağıda (post-update) tanımlı — TDZ hatası vermesin
+            // diye NOS koşuluyla aynı anı (pre-update) yansıtacak şekilde inline.
+            speed_kmh: speed_ms * 3.6,
+            rpm: Math.round(engineRpm)
+          };
+        }
         const nosTorque = (nosShotHp * 7120) / Math.max(engineRpm, 3000);
         engineTorque += nosTorque;
       }
@@ -245,6 +265,7 @@ export function simulate(config) {
     split_330ft_s: parseFloat(split330ft.toFixed(3)),
     total_slip_time_s: parseFloat(slipTimeTotal.toFixed(3)),
     gear_shifts: gearShifts,
+    nos_trigger: nosTrigger,
     slip_events: slipEvents,
     time_series: timeSeries,
     mode_target_met: isFinished

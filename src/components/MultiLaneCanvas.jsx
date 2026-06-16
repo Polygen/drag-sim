@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { simulate } from '../physics/simulation';
+import { simulateRun } from '../optimizer/simRunner';
 import { ArrowLeft, Flag, Trophy, RotateCcw } from 'lucide-react';
 
 export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
@@ -13,93 +13,10 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
 
   useEffect(() => {
     setStatus('Fizik hesaplanıyor...');
-    
-    // Calculate global mu
-    let surfaceMu = 1.0;
-    if (raceSettings.surface === 'vht') surfaceMu = 1.2;
-    if (raceSettings.surface === 'turkey_asphalt') surfaceMu = 0.7;
-
-    let tireMu = 1.0;
-    if (raceSettings.tire === 'slick') tireMu = 1.3;
-    if (raceSettings.tire === 'semi_slick') tireMu = 1.15;
-
-    const finalMu = surfaceMu * tireMu;
 
     try {
       const allResults = cars.map((car, index) => {
-        let mappedTqCurve = [];
-        
-        if (car.engine && car.engine.torque_curve_rpm_points) {
-          // Gerçek motor varsa, kullanıcı gücü ve torkuna göre dinamik ölçekle
-          const stockHp = parseInt(car.engine.stock_hp_at_rpm) || 1;
-          const stockTq = parseInt(car.engine.stock_torque_nm_at_rpm) || 1;
-          
-          // Hangi oran daha fazlaysa onu baz al (Kullanıcı sadece HP'yi 600 yapıp torku unutursa araba yavaş kalmasın)
-          const hpRatio = car.hp / stockHp;
-          const tqRatio = car.torque / stockTq;
-          const multiplier = Math.max(hpRatio, tqRatio);
-
-          mappedTqCurve = car.engine.torque_curve_rpm_points.map(p => ({
-            rpm: p.rpm,
-            nm: p.nm * multiplier
-          }));
-        } else {
-          // Motor seçilmemişse, girilen HP ve Tork değerlerine göre gerçekçi bir eğri uydur
-          mappedTqCurve = [1000, 2000, 3000, 4000, 5000, 6000, 6500, 7000, 8000].map(rpm => {
-            let nm = 0;
-            const peakTqRpm = 4000;
-            const peakHpRpm = 6500; // Genelde max beygir bu devirlerde alınır
-            const tqAtPeakHp = (car.hp * 7120) / peakHpRpm; // HP = (TQ * RPM) / 7120 formülünden ters
-            
-            if (rpm <= peakTqRpm) {
-               nm = car.torque * 0.7 + (car.torque * 0.3) * (rpm / peakTqRpm);
-            } else if (rpm <= peakHpRpm) {
-               const ratio = (rpm - peakTqRpm) / (peakHpRpm - peakTqRpm);
-               nm = car.torque - (car.torque - tqAtPeakHp) * ratio;
-            } else {
-               const ratio = (rpm - peakHpRpm) / (8000 - peakHpRpm);
-               nm = tqAtPeakHp * (1 - ratio * 0.3);
-            }
-            return { rpm, nm };
-          });
-        }
-
-        const gearRatios = car.transmission?.gear_ratios || [3.5, 2.0, 1.4, 1.0, 0.8, 0.6];
-        const finalDrive = car.transmission?.final_drive_ratio || 3.5;
-        const shiftTime = car.transmission?.shift_time_ms || (car.transmissionType === 'Auto' ? 100 : 300);
-        const eff = car.transmission?.efficiency_pct || (car.transmissionType === 'Auto' ? 90 : 95);
-
-        const simConfig = {
-          raceMode: raceSettings.mode,
-          weightKg: car.weight,
-          weightDistFrontPct: car.drivetrain === 'FWD' ? 62 : 50,
-          drivetrain: car.drivetrain,
-          wheelbaseM: 2.5,
-          cogHeightM: 0.5,
-          dragCoefficient: 0.30,
-          frontalAreaM2: 2.2,
-          rollingResistanceCoefficient: 0.012,
-          tireRadiusM: 0.32,
-          redlineRpm: car.engine?.redline_rpm || 7500,
-          idleRpm: car.engine?.idle_rpm || 800,
-          launchRpm: (car.engine?.idle_rpm || 800) + 3000,
-          gearRatios,
-          finalDriveRatio: finalDrive,
-          shiftTimeMs: shiftTime,
-          efficiencyPct: eff,
-          
-          // Çevresel ve Pist Faktörleri
-          mu: raceSettings.surface === 'vht' ? 1.2 : (raceSettings.surface === 'turkey_asphalt' ? 0.7 : 1.0),
-          tractionFactor: raceSettings.tire === 'slick' ? 1.3 : (raceSettings.tire === 'semi_slick' ? 1.15 : 0.8),
-          temperatureC: raceSettings.temperature || 20,
-          altitudeM: raceSettings.altitude || 0,
-          
-          torqueCurve: mappedTqCurve,
-          nosShot: car.nosShot || 0,
-          topSpeedKmh: car.hasLimiter !== false ? (car.top_speed_kmh || 350) : null
-        };
-
-        const res = simulate(simConfig);
+        const res = simulateRun(car, raceSettings);
         return { ...res, carInfo: car, laneIndex: index };
       });
 
@@ -109,7 +26,7 @@ export default function MultiLaneCanvas({ cars, raceSettings, onBack }) {
       } else {
         allResults.sort((a, b) => a.elapsed_time_s - b.elapsed_time_s);
       }
-      
+
       setStatus('Animasyon Oynatılıyor...');
       setResults(allResults); // Skoru hemen göster
       startAnimation(allResults);
