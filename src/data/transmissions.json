@@ -1,0 +1,211 @@
+[
+  {
+    "transmission_code": "5-speed Manual",
+    "origin_car": "Peugeot 207 RC",
+    "type": "Manuel",
+    "gear_count": 5,
+    "gear_ratios": [
+      3.5,
+      2,
+      1.4,
+      1,
+      0.8
+    ],
+    "final_drive_ratio": 3.5,
+    "max_torque_capacity_nm": 360,
+    "shift_time_ms": 250,
+    "weight_kg": 65,
+    "efficiency_pct": 95,
+    "compatible_engine_codes": [
+      "1.6 THP (EP6DTS)"
+    ],
+    "notes": "Orijinal üretici şanzımanı."
+  },
+  {
+    "transmission_code": "6-speed Manual",
+    "origin_car": "Peugeot RCZ",
+    "type": "Manuel",
+    "gear_count": 6,
+    "gear_ratios": [
+      3.5,
+      2,
+      1.4,
+      1,
+      0.8,
+      0.6
+    ],
+    "final_drive_ratio": 3.5,
+    "max_torque_capacity_nm": 412.5,
+    "shift_time_ms": 250,
+    "weight_kg": 65,
+    "efficiency_pct": 95,
+    "compatible_engine_codes": [
+      "1.6 THP (EP6CDTX)"
+    ],
+    "notes": "Orijinal üretici şanzımanı."
+  },
+  {
+    "transmission_code": "Getrag M-DCT",
+    "origin_car": "BMW M3 E92",
+    "type": "DCT/Auto",
+    "gear_count": 6,
+    "gear_ratios": [
+      3.5,
+      2,
+      1.4,
+      1,
+      0.8,
+      0.6
+    ],
+    "final_drive_ratio": 3.5,
+    "max_torque_capacity_nm": 800,
+    "shift_time_ms": 100,
+    "weight_kg": 85,
+    "efficiency_pct": 90,
+    "compatible_engine_codes": [
+      "S65B40"
+    ],
+    "notes": "Orijinal üretici şanzımanı."
+  },
+  {
+    "transmission_code": "ZF 8HP",
+    "origin_car": "BMW 335i F30",
+    "type": "DCT/Auto",
+    "gear_count": 8,
+    "gear_ratios": [
+      3.5,
+      2,
+      1.4,
+      1,
+      0.8,
+      0.6,
+      0.5,
+      0.4
+    ],
+    "final_drive_ratio": 3.5,
+    "max_torque_capacity_nm": 800,
+    "shift_time_ms": 80,
+    "weight_kg": 85,
+    "efficiency_pct": 90,
+    "compatible_engine_codes": [
+      "N55B30"
+    ],
+    "notes": "Orijinal üretici şanzımanı."
+  },
+  {
+    "transmission_code": "7-speed SMG",
+    "origin_car": "BMW M5 E60",
+    "type": "Manuel",
+    "gear_count": 7,
+    "gear_ratios": [
+      3.5,
+      2,
+      1.4,
+      1,
+      0.8,
+      0.6,
+      0.5
+    ],
+    "final_drive_ratio": 3.5,
+    "max_torque_capacity_nm": 780,
+    "shift_time_ms": 250,
+    "weight_kg": 65,
+    "efficiency_pct": 95,
+    "compatible_engine_codes": [
+      "S85B50"
+    ],
+    "notes": "Orijinal üretici şanzımanı."
+  },
+  {
+    "transmission_code": "VW DQ250",
+    "origin_car": "VW Golf Mk5 GTI",
+    "type": "Manuel",
+    "gear_count": 6,
+    "gear_ratios": [
+      3.5,
+      2,
+      1.4,
+      1,
+      0.8,
+      0.6
+    ],
+    "final_drive_ratio": 3.5,
+    "max_torque_capacity_nm": 420,
+    "shift_time_ms": 250,
+    "weight_kg": 65,
+    "efficiency_pct": 95,
+    "compatible_engine_codes": [
+      "EA113 2.0 TFSI"
+    ],
+    "notes": "Orijinal üretici şanzımanı."
+  },
+  {
+    "transmission_code": "Getrag TC-SST",
+    "origin_car": "Mitsubishi Lancer Evo X",
+    "type": "DCT/Auto",
+    "gear_count": 6,
+    "gear_ratios": [
+      3.5,
+      2,
+      1.4,
+      1,
+      0.8,
+      0.6
+    ],
+    "final_drive_ratio": 3.5,
+    "max_torque_capacity_nm": 732,
+    "shift_time_ms": 100,
+    "weight_kg": 85,
+    "efficiency_pct": 90,
+    "compatible_engine_codes": [
+      "4B11T"
+    ],
+    "notes": "Orijinal üretici şanzımanı."
+  },
+  {
+    "transmission_code": "Audi DQ500",
+    "origin_car": "Audi RS3 8V",
+    "type": "Manuel",
+    "gear_count": 6,
+    "gear_ratios": [
+      3.5,
+      2,
+      1.4,
+      1,
+      0.8,
+      0.6
+    ],
+    "final_drive_ratio": 3.5,
+    "max_torque_capacity_nm": 720,
+    "shift_time_ms": 250,
+    "weight_kg": 65,
+    "efficiency_pct": 95,
+    "compatible_engine_codes": [
+      "2.5 TFSI DAZA"
+    ],
+    "notes": "Orijinal üretici şanzımanı."
+  },
+  {
+    "transmission_code": "6-speed R-Tronic",
+    "origin_car": "Audi R8 Gen1",
+    "type": "Manuel",
+    "gear_count": 6,
+    "gear_ratios": [
+      3.5,
+      2,
+      1.4,
+      1,
+      0.8,
+      0.6
+    ],
+    "final_drive_ratio": 3.5,
+    "max_torque_capacity_nm": 645,
+    "shift_time_ms": 250,
+    "weight_kg": 65,
+    "efficiency_pct": 95,
+    "compatible_engine_codes": [
+      "4.2 FSI V8"
+    ],
+    "notes": "Orijinal üretici şanzımanı."
+  }
+]
