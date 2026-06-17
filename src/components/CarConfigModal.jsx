@@ -8,15 +8,16 @@ import { X, Save, Car, Zap, Settings, Circle, Wind, Flame, ChevronRight, AlertTr
 import { analyzeWheelieRisk } from '../physics/wheelieModel.js';
 import { checkForgedLimit } from '../physics/engineModel.js';
 import { parseTireSize } from '../physics/tireModel.js';
+import modificationsData from '../data/modifications.json';
 
 const TABS = [
-  { id: 'base',    label: 'Araç',     icon: Car },
-  { id: 'engine',  label: 'Motor',    icon: Zap },
-  { id: 'chassis', label: 'Şasi',     icon: Settings },
-  { id: 'tires',   label: 'Lastik',   icon: Circle },
-  { id: 'trans',   label: 'Şanzıman', icon: Settings },
-  { id: 'aero',    label: 'Aero',     icon: Wind },
-  { id: 'extras',  label: 'Özel',     icon: Flame },
+  { id: 'base', label: 'Araç', icon: Car },
+  { id: 'engine', label: 'Motor', icon: Zap },
+  { id: 'chassis', label: 'Şasi', icon: Settings },
+  { id: 'tires', label: 'Lastik', icon: Circle },
+  { id: 'trans', label: 'Şanzıman', icon: Settings },
+  { id: 'aero', label: 'Aero', icon: Wind },
+  { id: 'extras', label: 'Özel', icon: Flame },
 ];
 
 const DEFAULT_CONFIG = {
@@ -36,8 +37,12 @@ const DEFAULT_CONFIG = {
   flywheelType: 'standard',
   fuelType: '95',
   engineMods: { stage1: false, stage2: false, stage3: false, intercoolerUpgrade: false },
+  appliedMods: [], // Tüm modifikasyon listesi
   // Şasi
   driverWeightKg: 80,
+  baseCarWeightKg: 1200,
+  baseEngineWeightKg: 150,
+  baseWeightDistFrontPct: 50,
   cogHeightM: 0.50,
   wheelbaseM: 2.6,
   weightDistFrontPct: 50,
@@ -84,6 +89,9 @@ export default function CarConfigModal({ onClose, onSave, initialConfig }) {
       hp: defaultEngine ? parseInt(defaultEngine.stock_hp_at_rpm) : v.stock_hp,
       torque: defaultEngine ? parseInt(defaultEngine.stock_torque_nm_at_rpm) : v.stock_torque_nm,
       weight: v.curb_weight_kg,
+      baseCarWeightKg: v.curb_weight_kg,
+      baseEngineWeightKg: defaultEngine ? defaultEngine.engine_weight_kg : 150,
+      baseWeightDistFrontPct: v.weight_distribution_front_pct || 50,
       engine: defaultEngine || null,
       transmission: defaultTrans || null,
       top_speed_kmh: v.top_speed_kmh,
@@ -95,6 +103,7 @@ export default function CarConfigModal({ onClose, onSave, initialConfig }) {
       isForged: defaultEngine?.is_forged || false,
       fuelType: defaultEngine?.fuel_type || '95',
       differentialType: v.drivetrain_stock === 'AWD' ? 'lsd' : 'lsd',
+      appliedMods: [],
     });
   }, [selectedBase]);
 
@@ -110,6 +119,54 @@ export default function CarConfigModal({ onClose, onSave, initialConfig }) {
       });
     }
   };
+
+  // Ağrılık ve Denge Hesaplama (Engine Swap & Mods)
+  useEffect(() => {
+    let totalWeight = config.baseCarWeightKg || 1200;
+    let frontWeight = totalWeight * ((config.baseWeightDistFrontPct || 50) / 100);
+
+    // Motor değişimi ağırlık farkı
+    if (config.engine && config.baseEngineWeightKg) {
+      const engineWeightDiff = config.engine.engine_weight_kg - config.baseEngineWeightKg;
+      totalWeight += engineWeightDiff;
+      frontWeight += engineWeightDiff; // Motorun önde olduğunu varsayıyoruz
+    }
+
+    // Modifikasyon ağırlık etkileri
+    if (config.appliedMods) {
+      for (const mod of config.appliedMods) {
+        if (mod.weight_change_kg) {
+          totalWeight += mod.weight_change_kg;
+          if (mod.weight_dist_shift_pct === undefined) {
+            frontWeight += mod.weight_change_kg * 0.5;
+          }
+        }
+      }
+    }
+
+    const newDist = (frontWeight / totalWeight) * 100;
+    let finalDist = newDist;
+    if (config.appliedMods) {
+      for (const mod of config.appliedMods) {
+         if (mod.weight_dist_shift_pct) finalDist += mod.weight_dist_shift_pct;
+      }
+    }
+
+    upd({ weight: Math.round(totalWeight), weightDistFrontPct: Math.round(finalDist * 10) / 10 });
+  }, [config.engine, config.appliedMods, config.baseCarWeightKg, config.baseEngineWeightKg, config.baseWeightDistFrontPct]);
+
+  const toggleMod = (mod) => {
+    const isApplied = config.appliedMods?.find(m => m.id === mod.id);
+    let newMods = [...(config.appliedMods || [])];
+    if (isApplied) {
+      newMods = newMods.filter(m => m.id !== mod.id);
+    } else {
+      newMods.push(mod);
+    }
+    upd({ appliedMods: newMods });
+  };
+
+  const getModsByCategory = (cats) => modificationsData.filter(m => cats.includes(m.category));
 
   const handleTransChange = (tCode) => {
     const trans = transmissionsData.find(t => t.transmission_code === tCode);
@@ -127,7 +184,7 @@ export default function CarConfigModal({ onClose, onSave, initialConfig }) {
   };
 
   // Lastik geometrisi hesapla
-  const rearTireGeo  = useMemo(() => parseTireSize(config.rearTireSize), [config.rearTireSize]);
+  const rearTireGeo = useMemo(() => parseTireSize(config.rearTireSize), [config.rearTireSize]);
   const frontTireGeo = useMemo(() => parseTireSize(config.frontTireSize), [config.frontTireSize]);
 
   // Mekanik max hız
@@ -375,25 +432,23 @@ export default function CarConfigModal({ onClose, onSave, initialConfig }) {
                   <p className="text-gray-500 text-xs bg-gray-900/40 rounded p-3">Seçilen motor atmosferik (NA). Turbo/SC motoru seçerseniz boost ayarları burada görünür.</p>
                 )}
 
-                {sectionTitle('⚙️ Stage Modifikasyonlar')}
+                {sectionTitle('⚙️ Motor, Yakıt ve Yazılım Modifikasyonları')}
                 <div className="space-y-2">
-                  {[
-                    { key: 'stage1', label: 'Stage 1 — ECU Remap + Exhaust', desc: '+5-8% güç (turbo), +3-5% (NA)' },
-                    { key: 'stage2', label: 'Stage 2 — Intercooler + Intake', desc: '+10-15% güç (turbo), +5-8% (NA)' },
-                    { key: 'stage3', label: 'Stage 3 — Cam / Internal Mods', desc: '+15-20% güç (turbo)' },
-                    { key: 'intercoolerUpgrade', label: 'Intercooler Yükseltme', desc: '+3-4% (turbo ayrı bonus)' },
-                  ].map(mod => (
-                    <div key={mod.key} className="flex items-center gap-3 bg-gray-900/40 border border-gray-800 rounded-lg p-2.5">
-                      <input type="checkbox" id={`mod-${mod.key}`}
-                        checked={config.engineMods?.[mod.key] || false}
-                        onChange={e => upd({ engineMods: { ...(config.engineMods || {}), [mod.key]: e.target.checked } })}
-                        className="w-4 h-4 accent-red-500 cursor-pointer" />
-                      <div>
-                        <label htmlFor={`mod-${mod.key}`} className="text-sm text-white cursor-pointer font-medium">{mod.label}</label>
-                        <p className="text-xs text-gray-500">{mod.desc}</p>
+                  {getModsByCategory(['motor', 'yakit', 'atesleme', 'yazilim']).map(mod => {
+                    const isChecked = !!config.appliedMods?.find(m => m.id === mod.id);
+                    return (
+                      <div key={mod.id} className="flex items-center gap-3 bg-gray-900/40 border border-gray-800 rounded-lg p-2.5">
+                        <input type="checkbox" id={`mod-${mod.id}`}
+                          checked={isChecked}
+                          onChange={() => toggleMod(mod)}
+                          className="w-4 h-4 accent-red-500 cursor-pointer flex-shrink-0" />
+                        <div>
+                          <label htmlFor={`mod-${mod.id}`} className="text-sm text-white cursor-pointer font-medium">{mod.name}</label>
+                          <p className="text-xs text-gray-500">{mod.description}</p>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -467,6 +522,25 @@ export default function CarConfigModal({ onClose, onSave, initialConfig }) {
                     )}
                   </div>
                 </div>
+
+                {sectionTitle('🏎️ Şasi ve Ağırlık Modifikasyonları')}
+                <div className="space-y-2">
+                  {getModsByCategory(['sasi', 'agirlik']).map(mod => {
+                    const isChecked = !!config.appliedMods?.find(m => m.id === mod.id);
+                    return (
+                      <div key={mod.id} className="flex items-center gap-3 bg-gray-900/40 border border-gray-800 rounded-lg p-2.5">
+                        <input type="checkbox" id={`mod-${mod.id}`}
+                          checked={isChecked}
+                          onChange={() => toggleMod(mod)}
+                          className="w-4 h-4 accent-purple-500 cursor-pointer flex-shrink-0" />
+                        <div>
+                          <label htmlFor={`mod-${mod.id}`} className="text-sm text-white cursor-pointer font-medium">{mod.name}</label>
+                          <p className="text-xs text-gray-500">{mod.description}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             )}
 
@@ -503,14 +577,12 @@ export default function CarConfigModal({ onClose, onSave, initialConfig }) {
                     {tireCompoundsData.map(c => (
                       <div key={c.id}
                         onClick={() => handleTireCompoundChange(c.id)}
-                        className={`flex items-start gap-3 rounded-lg p-3 border cursor-pointer transition-all ${
-                          config.tireCompoundId === c.id
+                        className={`flex items-start gap-3 rounded-lg p-3 border cursor-pointer transition-all ${config.tireCompoundId === c.id
                             ? 'border-red-500 bg-red-500/10'
                             : 'border-gray-700 bg-gray-900/40 hover:border-gray-600'
-                        }`}>
-                        <div className={`w-4 h-4 rounded-full mt-0.5 border-2 flex items-center justify-center flex-shrink-0 ${
-                          config.tireCompoundId === c.id ? 'border-red-500 bg-red-500' : 'border-gray-600'
-                        }`}>
+                          }`}>
+                        <div className={`w-4 h-4 rounded-full mt-0.5 border-2 flex items-center justify-center flex-shrink-0 ${config.tireCompoundId === c.id ? 'border-red-500 bg-red-500' : 'border-gray-600'
+                          }`}>
                           {config.tireCompoundId === c.id && <div className="w-1.5 h-1.5 bg-white rounded-full" />}
                         </div>
                         <div className="flex-1 min-w-0">
@@ -620,6 +692,25 @@ export default function CarConfigModal({ onClose, onSave, initialConfig }) {
                     <option value="spool">Spool (Weld/Full Lock) — Maksimum çekiş</option>
                   </select>
                 </div>
+
+                {sectionTitle('⚙️ Şanzıman ve Aktarma Modifikasyonları')}
+                <div className="space-y-2">
+                  {getModsByCategory(['sanziman']).map(mod => {
+                    const isChecked = !!config.appliedMods?.find(m => m.id === mod.id);
+                    return (
+                      <div key={mod.id} className="flex items-center gap-3 bg-gray-900/40 border border-gray-800 rounded-lg p-2.5">
+                        <input type="checkbox" id={`mod-${mod.id}`}
+                          checked={isChecked}
+                          onChange={() => toggleMod(mod)}
+                          className="w-4 h-4 accent-blue-500 cursor-pointer flex-shrink-0" />
+                        <div>
+                          <label htmlFor={`mod-${mod.id}`} className="text-sm text-white cursor-pointer font-medium">{mod.name}</label>
+                          <p className="text-xs text-gray-500">{mod.description}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             )}
 
@@ -652,7 +743,7 @@ export default function CarConfigModal({ onClose, onSave, initialConfig }) {
                     <span className="text-white font-bold text-sm w-12 text-right">{(config.wingDownforceCl || 0).toFixed(2)}</span>
                   </div>
                   <p className="text-xs text-gray-500 mt-1">
-                    100 km/h'de ≈ {Math.round(0.5 * 1.225 * (config.wingDownforceCl || 0) * (config.frontalAreaM2 || 2.2) * (100/3.6)**2)} N basma kuvveti
+                    100 km/h'de ≈ {Math.round(0.5 * 1.225 * (config.wingDownforceCl || 0) * (config.frontalAreaM2 || 2.2) * (100 / 3.6) ** 2)} N basma kuvveti
                   </p>
                 </div>
 

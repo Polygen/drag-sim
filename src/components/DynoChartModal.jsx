@@ -1,36 +1,59 @@
-import { X, Activity } from 'lucide-react';
+import { useState, useMemo } from 'react';
+import { X, Activity, Info } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
+import { calcEffectiveEnginePower } from '../physics/engineModel.js';
 
 export default function DynoChartModal({ car, onClose }) {
+  const [testGear, setTestGear] = useState(1);
+  const [testRpm, setTestRpm] = useState(2500);
+
   if (!car || !car.engine || !car.engine.torque_curve_rpm_points) return null;
 
   const redlineRpm = car.engine.redline_rpm || 7500;
-  
-  // Sadece redline'a kadar olan (veya redline'ı çok az geçen) noktaları al
   const basePoints = car.engine.torque_curve_rpm_points.filter(pt => pt.rpm <= redlineRpm + 500);
   
-  // Find base peaks
   let baseMaxNm = 0;
   for (const pt of basePoints) {
     if (pt.nm > baseMaxNm) baseMaxNm = pt.nm;
   }
-  
-  // Calculate scaled points
   const nmRatio = baseMaxNm > 0 ? car.torque / baseMaxNm : 1;
   
+  let maxHpRpm = 0;
+  let maxHp = 0;
+
   const chartData = basePoints.map(pt => {
     const scaledNm = Math.round(pt.nm * nmRatio);
     const scaledHp = Math.round((scaledNm * pt.rpm) / 7120.9);
-    // Redline sonrasını sıfırlama veya kesme mantığı:
-    if (pt.rpm > redlineRpm) {
-       return { rpm: pt.rpm, tork: 0, guc: 0 }; // Redline'dan sonra güç kesilir
+    
+    if (pt.rpm <= redlineRpm && scaledHp > maxHp) {
+      maxHp = scaledHp;
+      maxHpRpm = pt.rpm;
     }
-    return {
-      rpm: pt.rpm,
-      tork: scaledNm,
-      guc: scaledHp // NOS grafiğe dahil edilmez, çünkü NOS pistte basılır, motorda sabit değildir
-    };
+
+    if (pt.rpm > redlineRpm) return { rpm: pt.rpm, tork: 0, guc: 0 };
+    return { rpm: pt.rpm, tork: scaledNm, guc: scaledHp };
   });
+
+  // Shift advice
+  let shiftAdviceRpm = maxHpRpm + 200;
+  if (shiftAdviceRpm > redlineRpm) shiftAdviceRpm = redlineRpm;
+
+  // Turbo simulator
+  const configForTest = {
+    baseTorqueNm: 200, // Dummy
+    engineRpm: testRpm,
+    aspiration: car.engine.aspiration,
+    maxBoostBar: car.engine.max_boost_bar || 0,
+    turboLagRpm: car.engine.turbo_lag_rpm || 2000,
+    fullBoostRpm: car.engine.full_boost_rpm || 3500,
+    intercoolerType: car.engine.intercooler_type,
+    fuelType: car.fuelType,
+    appliedMods: car.appliedMods,
+    powerLossFactor: 1.0,
+    atmosphericPressurePa: 101325
+  };
+
+  const testPower = calcEffectiveEnginePower(configForTest);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 overflow-y-auto">
@@ -38,9 +61,8 @@ export default function DynoChartModal({ car, onClose }) {
         <div className="flex justify-between items-center p-4 border-b border-gray-800 bg-black/50 sticky top-0 z-10">
           <h3 className="text-2xl font-bold flex items-center gap-3">
             <Activity className="text-red-500 animate-pulse" size={28} /> 
-            <img src="/rs-logo.png" alt="Preditech" className="h-8 object-contain mix-blend-screen" />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-400">
-              DYNO: {car.name}
+              DYNO & ANALİZ: {car.name}
             </span>
           </h3>
           <button type="button" onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
@@ -72,14 +94,10 @@ export default function DynoChartModal({ car, onClose }) {
             </div>
           </div>
 
-          <div className="h-[450px] w-full bg-gradient-to-b from-[#0f0f0f] to-[#050505] rounded-xl p-6 border border-gray-800 shadow-inner">
+          <div className="h-[350px] w-full bg-gradient-to-b from-[#0f0f0f] to-[#050505] rounded-xl p-6 border border-gray-800 shadow-inner mb-6">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
                 <defs>
-                  <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="5" result="blur" />
-                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                  </filter>
                   <linearGradient id="colorGuc" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#ef4444" stopOpacity={0.3}/>
                     <stop offset="95%" stopColor="#ef4444" stopOpacity={0}/>
@@ -90,48 +108,76 @@ export default function DynoChartModal({ car, onClose }) {
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="2 6" stroke="#2a2a2a" vertical={false} />
-                <XAxis dataKey="rpm" stroke="#444" tick={{fill: '#999', fontSize: 13, fontWeight: '500'}} tickMargin={12} axisLine={{stroke: '#333'}} />
-                <YAxis yAxisId="left" stroke="#ff2a2a" tick={{fill: '#ff2a2a', fontSize: 13, fontWeight: 'bold'}} axisLine={{stroke: '#ff2a2a', strokeOpacity: 0.3}} tickMargin={8} />
-                <YAxis yAxisId="right" orientation="right" stroke="#2a75ff" tick={{fill: '#2a75ff', fontSize: 13, fontWeight: 'bold'}} axisLine={{stroke: '#2a75ff', strokeOpacity: 0.3}} tickMargin={8} />
+                <XAxis dataKey="rpm" stroke="#444" tick={{fill: '#999', fontSize: 13}} tickMargin={12} />
+                <YAxis yAxisId="left" stroke="#ff2a2a" tick={{fill: '#ff2a2a', fontSize: 13}} />
+                <YAxis yAxisId="right" orientation="right" stroke="#2a75ff" tick={{fill: '#2a75ff', fontSize: 13}} />
                 <Tooltip 
-                  contentStyle={{ backgroundColor: 'rgba(0,0,0,0.9)', borderColor: '#333', borderRadius: '8px' }}
+                  contentStyle={{ backgroundColor: 'rgba(0,0,0,0.9)', borderColor: '#333' }}
                   itemStyle={{ fontWeight: 'bold' }}
-                  labelStyle={{ color: '#888', marginBottom: '8px' }}
                   formatter={(value, name) => [value, name === 'guc' ? 'HP' : 'Nm']}
-                  labelFormatter={(label) => `${label} RPM`}
                 />
                 <Legend />
-                <Area 
-                  yAxisId="left"
-                  type="monotone" 
-                  dataKey="guc" 
-                  name="Beygir Gücü (HP)" 
-                  stroke="#ff2a2a" 
-                  strokeWidth={4}
-                  fillOpacity={1} 
-                  fill="url(#colorGuc)" 
-                  activeDot={{ r: 7, fill: '#ff2a2a', stroke: '#fff', strokeWidth: 2 }}
-                  style={{ filter: 'url(#neonGlow)' }}
-                />
-                <Area 
-                  yAxisId="right"
-                  type="monotone" 
-                  dataKey="tork" 
-                  name="Tork (Nm)" 
-                  stroke="#2a75ff" 
-                  strokeWidth={4}
-                  fillOpacity={1} 
-                  fill="url(#colorTork)" 
-                  activeDot={{ r: 7, fill: '#2a75ff', stroke: '#fff', strokeWidth: 2 }}
-                  style={{ filter: 'url(#neonGlow)' }}
-                />
+                <Area yAxisId="left" type="monotone" dataKey="guc" name="Beygir Gücü (HP)" stroke="#ff2a2a" strokeWidth={3} fill="url(#colorGuc)" />
+                <Area yAxisId="right" type="monotone" dataKey="tork" name="Tork (Nm)" stroke="#2a75ff" strokeWidth={3} fill="url(#colorTork)" />
               </AreaChart>
             </ResponsiveContainer>
           </div>
-          
-          <div className="mt-6 text-center text-gray-500 text-sm">
-            Tekerlek Gücü (WHP) hesaplaması %{car.transmission?.efficiency_pct || 85} aktarma organı verimliliği üzerinden yapılmaktadır.
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Shift Advice */}
+            <div className="bg-gray-900/60 border border-gray-700 rounded-xl p-5">
+              <h4 className="text-white font-bold mb-3 flex items-center gap-2"><Info size={18} className="text-blue-400" /> Sürüş Tavsiyeleri</h4>
+              <ul className="space-y-3 text-sm text-gray-300">
+                <li className="flex justify-between bg-black/40 p-2 rounded">
+                  <span>Maksimum Güç Devri:</span>
+                  <span className="font-bold text-white">{maxHpRpm} RPM</span>
+                </li>
+                <li className="flex justify-between bg-black/40 p-2 rounded">
+                  <span>Önerilen Vites Atma Noktası:</span>
+                  <span className="font-bold text-green-400">{shiftAdviceRpm} RPM</span>
+                </li>
+                <li className="flex justify-between bg-black/40 p-2 rounded">
+                  <span>Traction / Patinaj Riski:</span>
+                  <span className="font-bold text-orange-400">{car.hp > 400 && car.drivetrain !== 'AWD' ? '1. ve 2. viteste yüksek' : 'Düşük/Orta'}</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Turbo Preview */}
+            <div className="bg-gray-900/60 border border-gray-700 rounded-xl p-5">
+              <h4 className="text-white font-bold mb-3 flex items-center gap-2"><Activity size={18} className="text-orange-400" /> Turbo ve Basınç Simülatörü</h4>
+              {car.engine.aspiration === 'turbo' || car.engine.max_boost_bar > 0 ? (
+                <>
+                  <div className="flex gap-4 mb-4">
+                    <div className="flex-1">
+                      <label className="text-xs text-gray-500 mb-1 block">Test Devri (RPM)</label>
+                      <input type="range" min="1000" max={redlineRpm} step="100" className="w-full accent-orange-500"
+                        value={testRpm} onChange={e => setTestRpm(Number(e.target.value))} />
+                      <div className="text-right text-white font-bold text-sm">{testRpm} RPM</div>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 text-sm text-gray-300">
+                    <div className="bg-black/40 p-3 rounded text-center">
+                      <p className="text-gray-500 text-xs mb-1">Anlık Basınç (Boost)</p>
+                      <p className="text-xl font-bold text-orange-400">{testPower.boostBar.toFixed(2)} Bar</p>
+                    </div>
+                    <div className="bg-black/40 p-3 rounded text-center">
+                      <p className="text-gray-500 text-xs mb-1">Spool Yüzdesi</p>
+                      <p className="text-xl font-bold text-white">{Math.round(testPower.boostFraction * 100)}%</p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-3 text-center">
+                    Bu hesaplama mevcut modifikasyonlar (Downpipe vb.) kullanılarak yapılır.
+                  </p>
+                </>
+              ) : (
+                <div className="h-full flex items-center justify-center text-gray-500 text-sm">
+                  Bu araç atmosferik (NA). Turbo modülü aktif değil.
+                </div>
+              )}
+            </div>
           </div>
+          
         </div>
       </div>
     </div>

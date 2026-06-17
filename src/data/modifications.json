@@ -9,13 +9,42 @@
     "description": "+%3 HP, -4kg ağırlık"
   },
   {
+    "id": "mod_downpipe",
+    "name": "Performans Downpipe",
+    "category": "motor",
+    "hp_multiplier": 1.05,
+    "turbo_spool_multiplier": 0.85,
+    "weight_change_kg": -3,
+    "cost_est": 18000,
+    "description": "Turbo araçlarda geri basıncı azaltır, spool'u hızlandırır (+%5 HP)"
+  },
+  {
+    "id": "mod_dpf_delete",
+    "name": "DPF / Katalizör İptali",
+    "category": "motor",
+    "hp_multiplier": 1.04,
+    "turbo_spool_multiplier": 0.90,
+    "weight_change_kg": -8,
+    "cost_est": 8000,
+    "description": "Katalizör ve DPF iptali ile rahat nefes alma"
+  },
+  {
+    "id": "mod_egr_delete",
+    "name": "EGR İptali",
+    "category": "motor",
+    "hp_multiplier": 1.02,
+    "weight_change_kg": -1,
+    "cost_est": 3000,
+    "description": "Emme manifolduna temiz hava girişini sağlar (+%2 HP)"
+  },
+  {
     "id": "mod_header",
     "name": "Performans Manifold (Header)",
     "category": "motor",
     "hp_multiplier": 1.05,
     "weight_change_kg": -2,
     "cost_est": 20000,
-    "description": "+%5 HP, -2kg ağırlık"
+    "description": "NA araçlarda egzoz tahliyesini hızlandırır (+%5 HP)"
   },
   {
     "id": "mod_cai",
@@ -24,7 +53,72 @@
     "hp_multiplier": 1.02,
     "weight_change_kg": 0,
     "cost_est": 5000,
-    "description": "+%2 HP"
+    "description": "+%2 HP, daha serin hava"
+  },
+  {
+    "id": "mod_methanol",
+    "name": "Metanol Kiti (WMI)",
+    "category": "yakit",
+    "hp_multiplier": 1.08,
+    "octane_boost": 5,
+    "weight_change_kg": 15,
+    "cost_est": 25000,
+    "description": "İçeriyi soğutur, oktan artırır. Turbo araçlarda +%8 HP. Ağırlık arkaya (Bagaj) eklenir."
+  },
+  {
+    "id": "mod_toluene",
+    "name": "Toluen Yakıt Katkısı",
+    "category": "yakit",
+    "hp_multiplier": 1.03,
+    "octane_boost": 3,
+    "weight_change_kg": 0,
+    "cost_est": 1500,
+    "description": "Yüksek devirde vuruntuyu keser, avans açmaya izin verir (+%3 HP)"
+  },
+  {
+    "id": "mod_injectors",
+    "name": "Yüksek Kapasiteli Enjektör (1000cc+)",
+    "category": "yakit",
+    "fuel_flow_multiplier": 1.5,
+    "weight_change_kg": 0,
+    "cost_est": 18000,
+    "description": "E85 ve yüksek basınçlı turbo uygulamaları için zorunlu"
+  },
+  {
+    "id": "mod_ignition_coils",
+    "name": "Performans Bobinler (R8/K20 Coils)",
+    "category": "atesleme",
+    "combustion_efficiency": 1.02,
+    "weight_change_kg": 0,
+    "cost_est": 8000,
+    "description": "Yüksek devirde tekleme sorununu çözer (+%2 Güç Dağılımı)"
+  },
+  {
+    "id": "mod_spark_plugs",
+    "name": "İridyum Soğuk Buji",
+    "category": "atesleme",
+    "combustion_efficiency": 1.01,
+    "weight_change_kg": 0,
+    "cost_est": 2500,
+    "description": "Baskı altında istikrarlı ateşleme (+%1 Güç Dağılımı)"
+  },
+  {
+    "id": "mod_tune_timing",
+    "name": "Enjektör ve Avans Ayarı (Yazılım)",
+    "category": "yazilim",
+    "hp_multiplier": 1.07,
+    "weight_change_kg": 0,
+    "cost_est": 10000,
+    "description": "Özel harita ile avans ve yakıt optimizasyonu (+%7 HP)"
+  },
+  {
+    "id": "mod_vvt_tune",
+    "name": "VVT / Vanos / VTEC Optimizasyonu",
+    "category": "yazilim",
+    "torque_band_widening": 1.15,
+    "weight_change_kg": 0,
+    "cost_est": 8000,
+    "description": "Alt ve orta devirlerde %15 daha geniş tork bandı"
   },
   {
     "id": "mod_lsd_1way",
@@ -78,23 +172,35 @@
     "rigidity_score_change": 2,
     "weight_change_kg": 40,
     "cog_height_change_mm": 5,
+    "weight_dist_shift_pct": 2,
     "cost_est": 40000,
-    "description": "Şasi rijitliğini 2 puan artırır, +40kg"
+    "description": "Şasi rijitliğini 2 puan artırır, +40kg arka ağırlık"
   },
   {
     "id": "mod_weight_reduction_stage1",
-    "name": "Ağırlık Azaltma (İç döşeme sökümü)",
+    "name": "Ağırlık Azaltma (Arka Döşeme/Koltuk İptali)",
     "category": "agirlik",
     "weight_change_kg": -35,
+    "weight_dist_shift_pct": 2,
     "cost_est": 0,
-    "description": "-35kg ağırlık azaltma"
+    "description": "-35kg (Arka ağırlığı azaltır, dengeyi öne kaydırır)"
+  },
+  {
+    "id": "mod_racing_seats",
+    "name": "Karbon Yarış Koltukları (Ön)",
+    "category": "agirlik",
+    "weight_change_kg": -40,
+    "weight_dist_shift_pct": -1,
+    "cost_est": 45000,
+    "description": "-40kg (Ön ağırlığı azaltır, dengeyi arkaya kaydırır)"
   },
   {
     "id": "mod_weight_reduction_stage2",
-    "name": "Yarış Koltukları & Karbon Parçalar",
+    "name": "Ekstrem Hafifletme (Karbon Kaporta)",
     "category": "agirlik",
-    "weight_change_kg": -50,
-    "cost_est": 60000,
-    "description": "-50kg ağırlık azaltma"
+    "weight_change_kg": -60,
+    "weight_dist_shift_pct": 0,
+    "cost_est": 120000,
+    "description": "-60kg (Dengeli hafifletme)"
   }
 ]

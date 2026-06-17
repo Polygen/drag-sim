@@ -207,5 +207,80 @@
       "4.2 FSI V8"
     ],
     "notes": "Orijinal üretici şanzımanı."
+  },
+  {
+    "transmission_code": "8-speed PDK",
+    "origin_car": "Porsche 911 Turbo S (992)",
+    "type": "Manuel",
+    "gear_count": 8,
+    "gear_ratios": [
+      3.5,
+      2,
+      1.4,
+      1,
+      0.8,
+      0.6,
+      0.5,
+      0.4
+    ],
+    "final_drive_ratio": 3.5,
+    "max_torque_capacity_nm": 1200,
+    "shift_time_ms": 250,
+    "weight_kg": 65,
+    "efficiency_pct": 95,
+    "compatible_engine_codes": [
+      "3.8 Boxer-6 TT"
+    ],
+    "notes": "Orijinal üretici şanzımanı."
+  },
+  {
+    "transmission_code": "8-speed DCT",
+    "origin_car": "Mercedes-AMG A45 AMG S",
+    "type": "DCT/Auto",
+    "gear_count": 8,
+    "gear_ratios": [
+      3.5,
+      2,
+      1.4,
+      1,
+      0.8,
+      0.6,
+      0.5,
+      0.4
+    ],
+    "final_drive_ratio": 3.5,
+    "max_torque_capacity_nm": 1000,
+    "shift_time_ms": 100,
+    "weight_kg": 85,
+    "efficiency_pct": 90,
+    "compatible_engine_codes": [
+      "M139 2.0T"
+    ],
+    "notes": "Orijinal üretici şanzımanı."
+  },
+  {
+    "transmission_code": "9-speed MCT",
+    "origin_car": "Mercedes-AMG E63s AMG (W213)",
+    "type": "Manuel",
+    "gear_count": 9,
+    "gear_ratios": [
+      3.5,
+      2,
+      1.4,
+      1,
+      0.8,
+      0.6,
+      0.5,
+      0.4
+    ],
+    "final_drive_ratio": 3.5,
+    "max_torque_capacity_nm": 1275,
+    "shift_time_ms": 250,
+    "weight_kg": 65,
+    "efficiency_pct": 95,
+    "compatible_engine_codes": [
+      "M177 4.0 V8 BiTurbo"
+    ],
+    "notes": "Orijinal üretici şanzımanı."
   }
 ]

@@ -37,21 +37,24 @@ export function fuelPowerMultiplier(fuelType, aspiration) {
  * @param {number} fullBoostRpm - Tam boost devri
  * @returns {{ effectiveBoostBar, boostFraction }}
  */
-export function calcTurboBoost(engineRpm, maxBoostBar, lagRpm, fullBoostRpm) {
+export function calcTurboBoost(engineRpm, maxBoostBar, lagRpm, fullBoostRpm, spoolMultiplier = 1.0) {
   if (!maxBoostBar || maxBoostBar <= 0) {
     return { effectiveBoostBar: 0, boostFraction: 1.0 };
   }
 
-  if (engineRpm <= lagRpm) {
+  const effectiveLagRpm = lagRpm * spoolMultiplier;
+  const effectiveFullRpm = fullBoostRpm * spoolMultiplier;
+
+  if (engineRpm <= effectiveLagRpm) {
     return { effectiveBoostBar: 0, boostFraction: 0 };
   }
 
-  if (engineRpm >= fullBoostRpm) {
+  if (engineRpm >= effectiveFullRpm) {
     return { effectiveBoostBar: maxBoostBar, boostFraction: 1.0 };
   }
 
   // Sigmoid boost artışı — gerçekçi turbo davranışı
-  const progress = (engineRpm - lagRpm) / (fullBoostRpm - lagRpm); // 0 → 1
+  const progress = (engineRpm - effectiveLagRpm) / (effectiveFullRpm - effectiveLagRpm); // 0 → 1
   const sigmoid  = 1 / (1 + Math.exp(-10 * (progress - 0.5)));
   const boostFraction = Math.min(1.0, sigmoid);
 
@@ -72,7 +75,7 @@ export function calcTurboBoost(engineRpm, maxBoostBar, lagRpm, fullBoostRpm) {
  * @param {number} intercoolerEfficiency - 0–1 (0.8 iyi intercooler)
  * @returns {number} boost uygulanmış tork (Nm)
  */
-export function applyBoostToTorque(engineTorqueNm, boostBar, atmosphericPressurePa, intercoolerEfficiency = 0.75) {
+export function applyBoostToTorque(engineTorqueNm, boostBar, atmosphericPressurePa, intercoolerEfficiency = 0.75, baseVe = 0.85) {
   if (boostBar <= 0) return engineTorqueNm;
 
   const boostPa        = boostBar * 100000; // bar → Pa
@@ -82,7 +85,8 @@ export function applyBoostToTorque(engineTorqueNm, boostBar, atmosphericPressure
   // Soğutma olmadan yoğunluk kazancı daha az verimli
   const densityGain = 1 + (pressureRatio - 1) * intercoolerEfficiency;
 
-  return engineTorqueNm * densityGain;
+  // VE (Volumetric Efficiency) ile hava kütlesi kazancı (Standart VE: 0.85)
+  return engineTorqueNm * densityGain * (baseVe / 0.85);
 }
 
 /**
@@ -162,20 +166,46 @@ export function flywheelInertia(flywheelType, baseInertiaKgm2) {
 }
 
 /**
- * Stage modifikasyonlarına göre güç multiplier
- * @param {object} mods - { stage1: bool, stage2: bool, stage3: bool, intercoolerUpgrade: bool }
- * @param {string} aspiration
- * @returns {number}
+ * Yeni Modifikasyon Sistemine Göre Çarpanlar
+ * @param {Array} appliedMods - Aktif modifikasyon nesneleri listesi (modifications.json'dan)
+ * @param {string} aspiration 
+ * @returns {object}
  */
-export function stageModMultiplier(mods, aspiration) {
-  if (!mods) return 1.0;
-  const isForced = aspiration === 'turbo' || aspiration === 'supercharged';
-  let mult = 1.0;
-  if (mods.stage1) mult *= isForced ? 1.08 : 1.05;  // ECU remap, exhaust
-  if (mods.stage2) mult *= isForced ? 1.12 : 1.08;  // Intercooler, intake
-  if (mods.stage3) mult *= isForced ? 1.18 : 1.10;  // Cams, internals
-  if (mods.intercoolerUpgrade && isForced) mult *= 1.04;
-  return mult;
+export function calculateModsPhysics(appliedMods, aspiration) {
+  let hpMultiplier = 1.0;
+  let turboSpoolMultiplier = 1.0;
+  let torqueBandWidening = 1.0;
+  let octaneBoost = 0;
+  let fuelFlowMultiplier = 1.0;
+  let combustionEfficiency = 1.0;
+
+  if (appliedMods && Array.isArray(appliedMods)) {
+    for (const mod of appliedMods) {
+      if (mod.hp_multiplier) hpMultiplier *= mod.hp_multiplier;
+      if (mod.turbo_spool_multiplier && aspiration === 'turbo') turboSpoolMultiplier *= mod.turbo_spool_multiplier;
+      if (mod.torque_band_widening) torqueBandWidening *= mod.torque_band_widening;
+      if (mod.octane_boost) octaneBoost += mod.octane_boost;
+      if (mod.fuel_flow_multiplier) fuelFlowMultiplier *= mod.fuel_flow_multiplier;
+      if (mod.combustion_efficiency) combustionEfficiency *= mod.combustion_efficiency;
+    }
+  }
+
+  // Eğer eski tarz mod objesi geldiyse (stage1 vb.)
+  if (appliedMods && !Array.isArray(appliedMods)) {
+    const isForced = aspiration === 'turbo' || aspiration === 'supercharged';
+    if (appliedMods.stage1) hpMultiplier *= isForced ? 1.08 : 1.05;
+    if (appliedMods.stage2) hpMultiplier *= isForced ? 1.12 : 1.08;
+    if (appliedMods.stage3) hpMultiplier *= isForced ? 1.18 : 1.10;
+    if (appliedMods.intercoolerUpgrade && isForced) hpMultiplier *= 1.04;
+  }
+
+  return {
+    hpMultiplier: hpMultiplier * combustionEfficiency,
+    turboSpoolMultiplier,
+    torqueBandWidening,
+    octaneBoost,
+    fuelFlowMultiplier
+  };
 }
 
 /**
@@ -193,23 +223,29 @@ export function calcEffectiveEnginePower(config) {
     fullBoostRpm,
     intercoolerType,
     fuelType,
-    mods,
+    appliedMods,        // Yeni: modifikasyon nesneleri listesi (ya da eski stage objesi)
     powerLossFactor,    // Hava yoğunluğu oranı
-    atmosphericPressurePa
+    atmosphericPressurePa,
+    baseVe = 0.85
   } = config;
+
+  // Modifikasyon çarpanları hesapla
+  const modsPhysics = calculateModsPhysics(appliedMods || config.mods || null, aspiration);
 
   // 1. Yakıt multiplier
   const fuelMult = fuelPowerMultiplier(fuelType || '95', aspiration || 'NA');
+  const totalFuelMult = fuelMult * (1 + (modsPhysics.octaneBoost * 0.01)); // Oktan başına kabaca %1 güç artışı
 
-  // 2. Stage mods
-  const stageMult = stageModMultiplier(mods, aspiration);
+  // 2. Tork bandı (Vanos/VVT tuning ile eğriyi iyileştirir)
+  const moddedTorqueNm = baseTorqueNm * modsPhysics.torqueBandWidening;
 
   // 3. Turbo boost hesabı
   const { effectiveBoostBar, boostFraction } = calcTurboBoost(
     engineRpm,
     maxBoostBar || 0,
     turboLagRpm || 2000,
-    fullBoostRpm || 3500
+    fullBoostRpm || 3500,
+    modsPhysics.turboSpoolMultiplier
   );
 
   // 4. Intercooler verimliliği
@@ -218,12 +254,13 @@ export function calcEffectiveEnginePower(config) {
     : intercoolerType === 'air-air' ? 0.80
     : 0.50; // Stock veya yok
 
-  // 5. Boost tork uygulaması
+  // 5. Boost tork uygulaması (VE dahil)
   const boostedTorque = applyBoostToTorque(
-    baseTorqueNm * fuelMult * stageMult,
+    moddedTorqueNm * totalFuelMult * modsPhysics.hpMultiplier,
     effectiveBoostBar,
     atmosphericPressurePa || 101325,
-    intercoolerEff
+    intercoolerEff,
+    baseVe
   );
 
   // 6. Rakım faktörü (turbo telafisi ile)
@@ -240,7 +277,7 @@ export function calcEffectiveEnginePower(config) {
     boostBar: effectiveBoostBar,
     boostFraction,
     powerFactor: altFactor,
-    fuelMult,
-    stageMult
+    fuelMult: totalFuelMult,
+    stageMult: modsPhysics.hpMultiplier
   };
 }

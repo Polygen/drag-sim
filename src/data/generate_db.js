@@ -101,7 +101,17 @@ const subaru = [
 const audi = [
   { model: "TT 8N", yr: "1998-2006", type: "coupe", w: 1395, wd: 60, d: "AWD", wb: 2422, tw: 1528, hp: 225, tq: 280, ec: "1.8T 20V BAM", tr: "6-speed Manual", r: 5, cx: 0.34, fa: 1.95, ft: 62 },
   { model: "RS3 8V", yr: "2015-2020", type: "hatchback", w: 1520, wd: 59, d: "AWD", wb: 2631, tw: 1559, hp: 400, tq: 480, ec: "2.5 TFSI DAZA", tr: "7-speed S-Tronic", r: 8, cx: 0.32, fa: 2.20, ft: 55 },
+  { model: "RS6 Avant C8", yr: "2020-2025", type: "wagon", w: 2075, wd: 55, d: "AWD", wb: 2928, tw: 1668, hp: 600, tq: 800, ec: "4.0 TFSI V8", tr: "8-speed Auto", r: 9, cx: 0.35, fa: 2.35, ft: 73 },
   { model: "R8 Gen1", yr: "2007-2015", type: "coupe", w: 1560, wd: 44, d: "AWD", wb: 2650, tw: 1632, hp: 420, tq: 430, ec: "4.2 FSI V8", tr: "6-speed R-Tronic", r: 9, cx: 0.34, fa: 2.00, ft: 75 }
+];
+
+const porsche = [
+  { model: "911 Turbo S (992)", yr: "2020-2025", type: "coupe", w: 1640, wd: 39, d: "AWD", wb: 2450, tw: 1583, hp: 650, tq: 800, ec: "3.8 Boxer-6 TT", tr: "8-speed PDK", r: 10, cx: 0.33, fa: 2.10, ft: 67 }
+];
+
+const mercedes = [
+  { model: "A45 AMG S", yr: "2019-2024", type: "hatchback", w: 1635, wd: 60, d: "AWD", wb: 2729, tw: 1585, hp: 421, tq: 500, ec: "M139 2.0T", tr: "8-speed DCT", r: 8, cx: 0.33, fa: 2.20, ft: 51 },
+  { model: "E63s AMG (W213)", yr: "2017-2023", type: "sedan", w: 1950, wd: 54, d: "AWD", wb: 2939, tw: 1626, hp: 612, tq: 850, ec: "M177 4.0 V8 BiTurbo", tr: "9-speed MCT", r: 9, cx: 0.32, fa: 2.30, ft: 66 }
 ];
 
 const others = [
@@ -120,6 +130,8 @@ const allVehicles = [
   ...expandCars("Toyota", toyota),
   ...expandCars("Subaru", subaru),
   ...expandCars("Audi", audi),
+  ...expandCars("Porsche", porsche),
+  ...expandCars("Mercedes-AMG", mercedes),
   ...expandCars("Honda", others)
 ];
 
@@ -145,7 +157,9 @@ function generateEngineDB(vehicles) {
     "SR20DET": { cc: 1998, w: 149 }, "2JZ-GTE": { cc: 2997, w: 230 }, "B58B30": { cc: 2998, w: 139 },
     "FA20": { cc: 1998, w: 160 }, "G16E-GTS": { cc: 1618, w: 109 }, "EJ207": { cc: 1994, w: 160 },
     "EJ257": { cc: 2457, w: 165 }, "1.8T 20V BAM": { cc: 1781, w: 145 }, "2.5 TFSI DAZA": { cc: 2480, w: 160 },
-    "4.2 FSI V8": { cc: 4163, w: 198 }, "B16B": { cc: 1595, w: 135 }, "K20C1": { cc: 1996, w: 140 }, "F20C": { cc: 1997, w: 148 }
+    "4.2 FSI V8": { cc: 4163, w: 198 }, "4.0 TFSI V8": { cc: 3996, w: 220 }, "3.8 Boxer-6 TT": { cc: 3745, w: 195 },
+    "M139 2.0T": { cc: 1991, w: 160 }, "M177 4.0 V8 BiTurbo": { cc: 3982, w: 205 },
+    "B16B": { cc: 1595, w: 135 }, "K20C1": { cc: 1996, w: 140 }, "F20C": { cc: 1997, w: 148 }
   };
   
   for (const v of vehicles) {

@@ -4135,6 +4135,111 @@
     "torque_at_launch_rpm_nm": 360
   },
   {
+    "engine_code": "4.0 TFSI V8",
+    "origin_car": "Audi RS6 Avant C8",
+    "displacement_cc": 3996,
+    "cylinder_count": 8,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "600hp",
+    "stock_torque_nm_at_rpm": "800Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 220,
+    "engine_width_mm": 600,
+    "engine_length_mm": 700,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 86
+      },
+      {
+        "rpm": 2000,
+        "hp": 171
+      },
+      {
+        "rpm": 3000,
+        "hp": 257
+      },
+      {
+        "rpm": 4000,
+        "hp": 343
+      },
+      {
+        "rpm": 5000,
+        "hp": 429
+      },
+      {
+        "rpm": 6000,
+        "hp": 514
+      },
+      {
+        "rpm": 7000,
+        "hp": 600
+      },
+      {
+        "rpm": 8000,
+        "hp": 600
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 495
+      },
+      {
+        "rpm": 2000,
+        "nm": 590
+      },
+      {
+        "rpm": 3000,
+        "nm": 686
+      },
+      {
+        "rpm": 4000,
+        "nm": 781
+      },
+      {
+        "rpm": 5000,
+        "nm": 724
+      },
+      {
+        "rpm": 6000,
+        "nm": 629
+      },
+      {
+        "rpm": 7000,
+        "nm": 533
+      },
+      {
+        "rpm": 8000,
+        "nm": 533
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili.",
+    "is_forged": false,
+    "max_hp_potential": 1080,
+    "engine_inertia_kgm2": 0.28,
+    "flywheel_type": "standard",
+    "fuel_type": "98",
+    "turbo_lag_rpm": 1800,
+    "boost_threshold_rpm": 3200,
+    "block_material": "aluminum",
+    "displacement_liters": 4,
+    "power_per_liter": 150,
+    "volumetric_efficiency": 0.85,
+    "oil_cooling": true,
+    "torque_at_launch_rpm_nm": 600
+  },
+  {
     "engine_code": "4.2 FSI V8",
     "origin_car": "Audi R8 Gen1",
     "displacement_cc": 4163,
@@ -4238,6 +4343,321 @@
     "volumetric_efficiency": 0.85,
     "oil_cooling": true,
     "torque_at_launch_rpm_nm": 323
+  },
+  {
+    "engine_code": "3.8 Boxer-6 TT",
+    "origin_car": "Porsche 911 Turbo S (992)",
+    "displacement_cc": 3745,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "650hp",
+    "stock_torque_nm_at_rpm": "800Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 195,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 93
+      },
+      {
+        "rpm": 2000,
+        "hp": 186
+      },
+      {
+        "rpm": 3000,
+        "hp": 279
+      },
+      {
+        "rpm": 4000,
+        "hp": 371
+      },
+      {
+        "rpm": 5000,
+        "hp": 464
+      },
+      {
+        "rpm": 6000,
+        "hp": 557
+      },
+      {
+        "rpm": 7000,
+        "hp": 650
+      },
+      {
+        "rpm": 8000,
+        "hp": 650
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 495
+      },
+      {
+        "rpm": 2000,
+        "nm": 590
+      },
+      {
+        "rpm": 3000,
+        "nm": 686
+      },
+      {
+        "rpm": 4000,
+        "nm": 781
+      },
+      {
+        "rpm": 5000,
+        "nm": 724
+      },
+      {
+        "rpm": 6000,
+        "nm": 629
+      },
+      {
+        "rpm": 7000,
+        "nm": 533
+      },
+      {
+        "rpm": 8000,
+        "nm": 533
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili.",
+    "is_forged": false,
+    "max_hp_potential": 1170,
+    "engine_inertia_kgm2": 0.27,
+    "flywheel_type": "standard",
+    "fuel_type": "98",
+    "turbo_lag_rpm": 1800,
+    "boost_threshold_rpm": 3200,
+    "block_material": "aluminum",
+    "displacement_liters": 3.75,
+    "power_per_liter": 174,
+    "volumetric_efficiency": 0.85,
+    "oil_cooling": true,
+    "torque_at_launch_rpm_nm": 600
+  },
+  {
+    "engine_code": "M139 2.0T",
+    "origin_car": "Mercedes-AMG A45 AMG S",
+    "displacement_cc": 1991,
+    "cylinder_count": 4,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "421hp",
+    "stock_torque_nm_at_rpm": "500Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 160,
+    "engine_width_mm": 600,
+    "engine_length_mm": 500,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 60
+      },
+      {
+        "rpm": 2000,
+        "hp": 120
+      },
+      {
+        "rpm": 3000,
+        "hp": 180
+      },
+      {
+        "rpm": 4000,
+        "hp": 241
+      },
+      {
+        "rpm": 5000,
+        "hp": 301
+      },
+      {
+        "rpm": 6000,
+        "hp": 361
+      },
+      {
+        "rpm": 7000,
+        "hp": 421
+      },
+      {
+        "rpm": 8000,
+        "hp": 421
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 310
+      },
+      {
+        "rpm": 2000,
+        "nm": 369
+      },
+      {
+        "rpm": 3000,
+        "nm": 429
+      },
+      {
+        "rpm": 4000,
+        "nm": 488
+      },
+      {
+        "rpm": 5000,
+        "nm": 452
+      },
+      {
+        "rpm": 6000,
+        "nm": 393
+      },
+      {
+        "rpm": 7000,
+        "nm": 333
+      },
+      {
+        "rpm": 8000,
+        "nm": 333
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili.",
+    "is_forged": false,
+    "max_hp_potential": 758,
+    "engine_inertia_kgm2": 0.2,
+    "flywheel_type": "standard",
+    "fuel_type": "98",
+    "turbo_lag_rpm": 1800,
+    "boost_threshold_rpm": 3200,
+    "block_material": "cast_iron",
+    "displacement_liters": 1.99,
+    "power_per_liter": 211,
+    "volumetric_efficiency": 0.85,
+    "oil_cooling": true,
+    "torque_at_launch_rpm_nm": 375
+  },
+  {
+    "engine_code": "M177 4.0 V8 BiTurbo",
+    "origin_car": "Mercedes-AMG E63s AMG (W213)",
+    "displacement_cc": 3982,
+    "cylinder_count": 8,
+    "configuration": "inline",
+    "aspiration": "turbo",
+    "stock_hp_at_rpm": "612hp",
+    "stock_torque_nm_at_rpm": "850Nm",
+    "redline_rpm": 7000,
+    "idle_rpm": 800,
+    "engine_weight_kg": 205,
+    "engine_width_mm": 600,
+    "engine_length_mm": 700,
+    "engine_height_mm": 600,
+    "orientation": "longitudinal",
+    "fuel_type_required": "95",
+    "power_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "hp": 87
+      },
+      {
+        "rpm": 2000,
+        "hp": 175
+      },
+      {
+        "rpm": 3000,
+        "hp": 262
+      },
+      {
+        "rpm": 4000,
+        "hp": 350
+      },
+      {
+        "rpm": 5000,
+        "hp": 437
+      },
+      {
+        "rpm": 6000,
+        "hp": 525
+      },
+      {
+        "rpm": 7000,
+        "hp": 612
+      },
+      {
+        "rpm": 8000,
+        "hp": 612
+      }
+    ],
+    "torque_curve_rpm_points": [
+      {
+        "rpm": 1000,
+        "nm": 526
+      },
+      {
+        "rpm": 2000,
+        "nm": 627
+      },
+      {
+        "rpm": 3000,
+        "nm": 729
+      },
+      {
+        "rpm": 4000,
+        "nm": 830
+      },
+      {
+        "rpm": 5000,
+        "nm": 769
+      },
+      {
+        "rpm": 6000,
+        "nm": 668
+      },
+      {
+        "rpm": 7000,
+        "nm": 567
+      },
+      {
+        "rpm": 8000,
+        "nm": 567
+      }
+    ],
+    "compression_ratio": "10.0:1",
+    "max_boost_bar": 1.2,
+    "intercooler_type": "Front mount",
+    "cooling_type": "Su soğutmalı",
+    "oil_type_recommended": "5W-40",
+    "notes": "Gerçekçi verilerle donatılmış motor profili.",
+    "is_forged": false,
+    "max_hp_potential": 1102,
+    "engine_inertia_kgm2": 0.279,
+    "flywheel_type": "standard",
+    "fuel_type": "98",
+    "turbo_lag_rpm": 1800,
+    "boost_threshold_rpm": 3200,
+    "block_material": "aluminum",
+    "displacement_liters": 3.98,
+    "power_per_liter": 154,
+    "volumetric_efficiency": 0.85,
+    "oil_cooling": true,
+    "torque_at_launch_rpm_nm": 638
   },
   {
     "engine_code": "B16B",
